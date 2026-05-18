@@ -1,100 +1,43 @@
-========================================
-BUG Busters - API Feature Documentation
-========================================
+Feature: Authentication API Workflows
 
-Module Name: Authentication API
-Feature File: login_api.feature
-API Type: POST
-Endpoint: /api/login
+  Scenario: Verify successful login with valid credentials
+    Given user sends login request with valid credentials
+    Then login response status code should be 200
+    And authentication token should be generated
 
-Scenarios Covered:
---------------------------------------------------
+  Scenario: Verify login with invalid password
+    Given user sends login request with invalid password
+    Then login response status code should be 401
+    And error message should be displayed
 
-1. Verify successful login with valid credentials
-   - Validate status code 200
-   - Validate auth token generation
+  Scenario: Verify login with empty email field
+    Given user sends login request without email
+    Then login response status code should be 400
+    And validation message for email should be displayed
 
-2. Verify login with invalid password
-   - Validate status code 401
-   - Validate error message
+  Scenario: Verify login with empty password field
+    Given user sends login request without password
+    Then login response status code should be 400
+    And validation message for password should be displayed
 
-3. Verify login with empty email field
-   - Validate required field validation
+  Scenario: Verify login with invalid email format
+    Given user sends login request with invalid email format
+    Then login response status code should be 400
+    And invalid email format message should be displayed
 
-4. Verify login with empty password field
-   - Validate required field validation
+Feature: Product API Workflows
 
-5. Verify login with invalid email format
-   - Validate validation message
+  Scenario: Verify all products are fetched successfully
+    Given user sends request to fetch all products
+    Then products response status code should be 200
+    And product list should be returned
 
-==================================================
+  Scenario: Verify product details by valid product ID
+    Given user sends request with valid product ID
+    Then product details response status code should be 200
+    And product details should be displayed
 
-Module Name: Product API
-Feature File: products_api.feature
-API Type: GET
-Endpoint: /api/products
-
-Scenarios Covered:
---------------------------------------------------
-
-1. Verify all products are fetched successfully
-2. Verify product details by valid product ID
-3. Verify product details with invalid product ID
-4. Verify unauthorized access without token
-
-==================================================
-
-Module Name: Cart API
-Feature File: cart_api.feature
-API Type: POST / GET
-Endpoint: /api/cart
-
-Scenarios Covered:
---------------------------------------------------
-
-1. Verify product added to cart successfully
-2. Verify cart item count updated
-3. Verify duplicate product handling
-4. Verify cart retrieval
-5. Verify unauthorized cart access
-
-==================================================
-
-Module Name: Orders API
-Feature File: orders_api.feature
-API Type: POST / GET
-Endpoint: /api/orders
-
-Scenarios Covered:
---------------------------------------------------
-
-1. Verify order creation successfully
-2. Verify order details retrieval
-3. Verify order creation with invalid payload
-4. Verify payment validation
-5. Verify unauthorized order access
-
-==================================================
-
-# BUG Busters API Feature Traceability
-
-## Authentication API
-
-Feature File: `login_api.feature`
-
-| Scenario ID | Scenario Name | Endpoint | Method |
-|---|---|---|---|
-| AUTH_001 | Valid Login | /api/login | POST |
-| AUTH_002 | Invalid Password | /api/login | POST |
-| AUTH_003 | Empty Email | /api/login | POST |
-
----
-
-## Cart API
-
-Feature File: `cart_api.feature`
-
-| Scenario ID | Scenario Name | Endpoint | Method |
-|---|---|---|---|
-| CART_001 | Add Product to Cart | /api/cart | POST |
-| CART_002 | Get Cart Details | /api/cart | GET |
+  Scenario: Verify product details with invalid product ID
+    Given user sends request with invalid product ID
+    Then product response status code should be 404
+    And product not found message should be displayed
