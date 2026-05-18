@@ -1,17 +1,14 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from utils.driver_factory import get_driver
 
-
-@pytest.fixture
+@pytest.fixture(scope="function")
 def setup():
 
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install())
-    )
+    driver = get_driver()
 
     driver.maximize_window()
+
+    driver.get("https://shop.qaautomationlabs.com/index.php?route=common/home")
 
     yield driver
 

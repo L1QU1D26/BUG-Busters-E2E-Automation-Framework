@@ -1,4 +1,5 @@
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
@@ -7,10 +8,16 @@ class BasePage:
         self.driver = driver
 
     def do_click(self, locator):
-        self.driver.find_element(*locator).click()
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator)
+        ).click()
 
     def send_keys(self, locator, value):
-        self.driver.find_element(*locator).send_keys(value)
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator)
+        ).send_keys(value)
 
     def get_text(self, locator):
-        return self.driver.find_element(*locator).text
+        return WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator)
+        ).text
