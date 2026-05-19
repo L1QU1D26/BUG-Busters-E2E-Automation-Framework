@@ -1,4 +1,4 @@
-BASE_URL = "https://api.demowebshop.com"
+BASE_URL = "https://dummyjson.com"
 
 HEADERS = {
     "Content-Type": "application/json"
