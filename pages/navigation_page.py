@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
-from base_page import BasePage
+from pages.base_page import BasePage
 
 
 class NavigationPage(BasePage):
 
     def __init__(self, driver):
-        super()._init_(driver)
+        super().__init__(driver)
 
         self.products_menu = (By.CSS_SELECTOR, ".nav-link.dropdown-toggle")
         self.view_all_products = (By.CSS_SELECTOR, ".dropdown-menu a[href='shop.php']")
@@ -22,4 +22,4 @@ class NavigationPage(BasePage):
         self.click(self.cart_icon)
 
     def is_products_page_displayed(self):
-        return self.get_text(self.product_category)
+        return self.is_displayed(self.product_category)
