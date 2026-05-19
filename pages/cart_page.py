@@ -9,7 +9,11 @@ class CartPage(BasePage):
 
         # Locators
         self.shop_menu = (By.LINK_TEXT, "Shop")
-        self.mens_wear_category = (By.LINK_TEXT, "Mens Wear")
+
+        self.mens_wear_category = (
+            By.LINK_TEXT,
+            "Mens Wear"
+        )
 
         self.add_to_cart_button = (
             By.XPATH,
@@ -35,24 +39,23 @@ class CartPage(BasePage):
             By.ID,
             "cartCount"
         )
+
     # Methods
     def open_mens_wear_category(self):
-        self.driver.find_element(*self.shop_menu).click()
-        self.driver.find_element(*self.mens_wear_category).click()
+        self.click(self.shop_menu)
+        self.click(self.mens_wear_category)
 
     def add_product_to_cart(self):
-        self.driver.find_element(*self.add_to_cart_button).click()
+        self.click(self.add_to_cart_button)
 
     def open_cart(self):
-        self.driver.find_element(*self.cart_icon).click()
+        self.click(self.cart_icon)
 
     def update_product_quantity(self, quantity):
-        quantity_element = self.driver.find_element(*self.quantity_input)
-        quantity_element.clear()
-        quantity_element.send_keys(str(quantity))
+        self.enter_text(self.quantity_input, str(quantity))
 
     def remove_product_from_cart(self):
-        self.driver.find_element(*self.remove_button).click()
+        self.click(self.remove_button)
 
     def get_cart_count(self):
-        return self.driver.find_element(*self.cart_count).text
+        return self.get_text(self.cart_count)
