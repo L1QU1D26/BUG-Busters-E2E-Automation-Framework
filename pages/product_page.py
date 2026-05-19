@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
-from base_page import BasePage
+from pages.base_page import BasePage
 
 
 class ProductPage(BasePage):
 
     def __init__(self, driver):
-        super()._init_(driver)
+        super().__init__(driver)
 
         self.first_product = (By.CSS_SELECTOR, "a[href='product.php?id=21']")
         self.add_to_cart = (By.CSS_SELECTOR, ".addToCart")
