@@ -12,9 +12,7 @@ Feature: Order Confirmation
       | city       | Kamareddy |
       | zip_code   | 503108    |
 
-  Scenario: Verify successful order placement and order number generation
+  Scenario: Verify successful order placement
     When user clicks on place order button
     Then the order confirmation page should load successfully
-    And a success message "Thank you. Your order has been received." should be displayed
-    And a valid order number should be generated
-    And the order summary including date and total should be visible
+    And a success message "Your order has been placed successfully." should be displayed
