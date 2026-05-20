@@ -1,5 +1,4 @@
 from api.base.api_client import APIClient
-from api.payloads.login_payload import login_payload
 
 class AuthAPI(APIClient):
 
@@ -7,16 +6,14 @@ class AuthAPI(APIClient):
 
     def login(self, username, password):
 
-        payload = login_payload(username, password)
-
-        headers = {
-            "Content-Type": "application/json"
+        payload = {
+            "username": username,
+            "password": password
         }
 
         response = self.post(
             self.LOGIN_ENDPOINT,
-            payload,
-            headers
+            payload
         )
 
         return response

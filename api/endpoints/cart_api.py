@@ -1,10 +1,10 @@
 from api.base.api_client import APIClient
 
-class OrderAPI(APIClient):
+class CartAPI(APIClient):
 
-    ORDER_ENDPOINT = "/carts/add"
+    CART_ENDPOINT = "/carts/add"
 
-    def create_order(self, user_id, product_id, quantity):
+    def add_to_cart(self, user_id, product_id, quantity):
 
         payload = {
             "userId": user_id,
@@ -17,7 +17,7 @@ class OrderAPI(APIClient):
         }
 
         response = self.post(
-            self.ORDER_ENDPOINT,
+            self.CART_ENDPOINT,
             payload
         )
 

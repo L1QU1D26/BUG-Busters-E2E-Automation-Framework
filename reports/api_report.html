@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title id="head-title">api_report.html</title>
+      <link href="assets\style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <h1 id="title">api_report.html</h1>
+    <p>Report generated on 20-May-2026 at 15:36:01 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+        v4.2.0</p>
+    <div id="environment-header">
+      <h2>Environment</h2>
+    </div>
+    <table id="environment"></table>
+    <!-- TEMPLATES -->
+      <template id="template_environment_row">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <template id="template_results-table__body--empty">
+      <tbody class="results-table-row">
+        <tr id="not-found-message">
+          <td colspan="4">No results found. Check the filters.</td>
+        </tr>
+      </tbody>
+    </template>
+    <template id="template_results-table__tbody">
+      <tbody class="results-table-row">
+        <tr class="collapsible">
+        </tr>
+        <tr class="extras-row">
+          <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+              <div class="media-container">
+                  <div class="media-container__nav--left">&lt;</div>
+                  <div class="media-container__viewport">
+                    <img src="" />
+                    <video controls>
+                      <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="media-container__nav--right">&gt;</div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+              <div class="logexpander"></div>
+              <div class="log"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+    <!-- END TEMPLATES -->
+    <div class="summary">
+      <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">9 tests took 00:00:07.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+          <div class="summary__reload__button hidden" onclick="location.reload()">
+            <div>There are still tests running. <br />Reload this page to get the latest results!</div>
+          </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+          <div class="filters">
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="failed" disabled>
+            <span class="failed">0 Failed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="passed" >
+            <span class="passed">9 Passed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="skipped" disabled>
+            <span class="skipped">0 Skipped,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xfailed" disabled>
+            <span class="xfailed">0 Expected failures,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xpassed" disabled>
+            <span class="xpassed">0 Unexpected passes,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="error" disabled>
+            <span class="error">0 Errors,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="rerun" disabled>
+            <span class="rerun">0 Reruns</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="retried" disabled>
+            <span class="retried">0 Retried,</span>
+          </div>
+          <div class="collapse">
+            <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide all details</button>
+          </div>
+        </div>
+      </div>
+      <div class="additional-summary summary">
+      </div>
+      <div class="additional-summary postfix">
+      </div>
+    </div>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable" data-column-type="result">Result</th>
+          <th class="sortable" data-column-type="testId">Test</th>
+          <th class="sortable" data-column-type="duration">Duration</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+    </table>
+  <footer>
+    <div id="data-container" data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.11.9&#34;, &#34;Platform&#34;: &#34;Windows-10-10.0.26200-SP0&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;9.0.3&#34;, &#34;pluggy&#34;: &#34;1.6.0&#34;}, &#34;Plugins&#34;: {&#34;allure-pytest&#34;: &#34;2.16.0&#34;, &#34;bdd&#34;: &#34;8.1.0&#34;, &#34;html&#34;: &#34;4.2.0&#34;, &#34;metadata&#34;: &#34;3.1.1&#34;, &#34;xdist&#34;: &#34;3.8.0&#34;}}, &#34;tests&#34;: {&#34;tests/api/test_cart_api.py::test_add_to_cart&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_cart_api.py::test_add_to_cart&#34;, &#34;duration&#34;: &#34;886 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_cart_api.py::test_add_to_cart&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;886 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n201\n{&amp;#x27;id&amp;#x27;: 209, &amp;#x27;products&amp;#x27;: [{&amp;#x27;id&amp;#x27;: 1, &amp;#x27;title&amp;#x27;: &amp;#x27;Essence Mascara Lash Princess&amp;#x27;, &amp;#x27;price&amp;#x27;: 9.99, &amp;#x27;quantity&amp;#x27;: 2, &amp;#x27;total&amp;#x27;: 19.98, &amp;#x27;discountPercentage&amp;#x27;: 10.48, &amp;#x27;discountedPrice&amp;#x27;: 18, &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp&amp;#x27;}], &amp;#x27;total&amp;#x27;: 19.98, &amp;#x27;discountedTotal&amp;#x27;: 18, &amp;#x27;userId&amp;#x27;: 1, &amp;#x27;totalProducts&amp;#x27;: 1, &amp;#x27;totalQuantity&amp;#x27;: 2}\n&#34;}], &#34;tests/api/test_cart_api.py::test_invalid_cart&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_cart_api.py::test_invalid_cart&#34;, &#34;duration&#34;: &#34;844 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_cart_api.py::test_invalid_cart&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;844 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n201\n{&amp;#x27;id&amp;#x27;: 209, &amp;#x27;products&amp;#x27;: [], &amp;#x27;total&amp;#x27;: 0, &amp;#x27;discountedTotal&amp;#x27;: 0, &amp;#x27;userId&amp;#x27;: 1, &amp;#x27;totalProducts&amp;#x27;: 0, &amp;#x27;totalQuantity&amp;#x27;: 0}\n&#34;}], &#34;tests/api/test_login_api.py::test_valid_login&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_login_api.py::test_valid_login&#34;, &#34;duration&#34;: &#34;911 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_login_api.py::test_valid_login&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;911 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n200\n{&amp;#x27;accessToken&amp;#x27;: &amp;#x27;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NzkyNzE1NTksImV4cCI6MTc3OTI3NTE1OX0.bsnp8HUfuI0k21R-sHpo0z-20us_QKGnJYXIIfc2whQ&amp;#x27;, &amp;#x27;refreshToken&amp;#x27;: &amp;#x27;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NzkyNzE1NTksImV4cCI6MTc4MTg2MzU1OX0.UOStVYFSAkj8AdiW8Y_blmckAgKZP6KLqp9CvQuVe-0&amp;#x27;, &amp;#x27;id&amp;#x27;: 1, &amp;#x27;username&amp;#x27;: &amp;#x27;emilys&amp;#x27;, &amp;#x27;email&amp;#x27;: &amp;#x27;emily.johnson@x.dummyjson.com&amp;#x27;, &amp;#x27;firstName&amp;#x27;: &amp;#x27;Emily&amp;#x27;, &amp;#x27;lastName&amp;#x27;: &amp;#x27;Johnson&amp;#x27;, &amp;#x27;gender&amp;#x27;: &amp;#x27;female&amp;#x27;, &amp;#x27;image&amp;#x27;: &amp;#x27;https://dummyjson.com/icon/emilys/128&amp;#x27;}\n&#34;}], &#34;tests/api/test_login_api.py::test_invalid_login&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_login_api.py::test_invalid_login&#34;, &#34;duration&#34;: &#34;732 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_login_api.py::test_invalid_login&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;732 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n400\n{&amp;#x27;message&amp;#x27;: &amp;#x27;Invalid credentials&amp;#x27;}\n&#34;}], &#34;tests/api/test_order_api.py::test_create_order&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_order_api.py::test_create_order&#34;, &#34;duration&#34;: &#34;743 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_order_api.py::test_create_order&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;743 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n201\n{&amp;#x27;id&amp;#x27;: 209, &amp;#x27;products&amp;#x27;: [{&amp;#x27;id&amp;#x27;: 1, &amp;#x27;title&amp;#x27;: &amp;#x27;Essence Mascara Lash Princess&amp;#x27;, &amp;#x27;price&amp;#x27;: 9.99, &amp;#x27;quantity&amp;#x27;: 1, &amp;#x27;total&amp;#x27;: 9.99, &amp;#x27;discountPercentage&amp;#x27;: 10.48, &amp;#x27;discountedPrice&amp;#x27;: 9, &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp&amp;#x27;}], &amp;#x27;total&amp;#x27;: 9.99, &amp;#x27;discountedTotal&amp;#x27;: 9, &amp;#x27;userId&amp;#x27;: 1, &amp;#x27;totalProducts&amp;#x27;: 1, &amp;#x27;totalQuantity&amp;#x27;: 1}\n&#34;}], &#34;tests/api/test_order_api.py::test_order_with_missing_fields&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_order_api.py::test_order_with_missing_fields&#34;, &#34;duration&#34;: &#34;698 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_order_api.py::test_order_with_missing_fields&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;698 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n400\n{&amp;#x27;message&amp;#x27;: &amp;#x27;User id is required&amp;#x27;}\n&#34;}], &#34;tests/api/test_product_api.py::test_get_all_products&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_product_api.py::test_get_all_products&#34;, &#34;duration&#34;: &#34;452 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_product_api.py::test_get_all_products&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;452 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n200\n{&amp;#x27;products&amp;#x27;: [{&amp;#x27;id&amp;#x27;: 1, &amp;#x27;title&amp;#x27;: &amp;#x27;Essence Mascara Lash Princess&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 9.99, &amp;#x27;discountPercentage&amp;#x27;: 10.48, &amp;#x27;rating&amp;#x27;: 2.56, &amp;#x27;stock&amp;#x27;: 99, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;mascara&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Essence&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-ESS-ESS-001&amp;#x27;, &amp;#x27;weight&amp;#x27;: 4, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 15.14, &amp;#x27;height&amp;#x27;: 13.08, &amp;#x27;depth&amp;#x27;: 22.99}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 week warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 3-5 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Collins&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.collins@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very satisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Lucas Gordon&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;lucas.gordon@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Collins&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.collins@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 48, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;5784719087687&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 2, &amp;#x27;title&amp;#x27;: &amp;#x27;Eyeshadow Palette with Mirror&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;quot;The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it&amp;#x27;s convenient for on-the-go makeup application.&amp;quot;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 19.99, &amp;#x27;discountPercentage&amp;#x27;: 18.19, &amp;#x27;rating&amp;#x27;: 2.86, &amp;#x27;stock&amp;#x27;: 34, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;eyeshadow&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Glamour Beauty&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-GLA-EYE-002&amp;#x27;, &amp;#x27;weight&amp;#x27;: 9, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 9.26, &amp;#x27;height&amp;#x27;: 22.47, &amp;#x27;depth&amp;#x27;: 27.67}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 2 weeks&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Savannah Gomez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;savannah.gomez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Awesome product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Christian Perez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;christian.perez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nicholas Bailey&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nicholas.bailey@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 20, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;9170275171413&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 3, &amp;#x27;title&amp;#x27;: &amp;#x27;Powder Canister&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 14.99, &amp;#x27;discountPercentage&amp;#x27;: 9.84, &amp;#x27;rating&amp;#x27;: 4.64, &amp;#x27;stock&amp;#x27;: 89, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;face powder&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Velvet Touch&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-VEL-POW-003&amp;#x27;, &amp;#x27;weight&amp;#x27;: 8, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 29.27, &amp;#x27;height&amp;#x27;: 27.93, &amp;#x27;depth&amp;#x27;: 20.59}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 months warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1-2 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Alexander Jones&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;alexander.jones@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Elijah Cruz&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;elijah.cruz@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very dissatisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Avery Perez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;avery.perez@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 22, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;8418883906837&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 4, &amp;#x27;title&amp;#x27;: &amp;#x27;Red Lipstick&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 12.99, &amp;#x27;discountPercentage&amp;#x27;: 12.16, &amp;#x27;rating&amp;#x27;: 4.36, &amp;#x27;stock&amp;#x27;: 91, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;lipstick&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Chic Cosmetics&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-CHI-LIP-004&amp;#x27;, &amp;#x27;weight&amp;#x27;: 1, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 18.11, &amp;#x27;height&amp;#x27;: 28.38, &amp;#x27;depth&amp;#x27;: 22.17}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Liam Garcia&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;liam.garcia@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Ruby Andrews&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;ruby.andrews@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Clara Berry&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;clara.berry@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 40, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;9467746727219&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 5, &amp;#x27;title&amp;#x27;: &amp;#x27;Red Nail Polish&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 8.99, &amp;#x27;discountPercentage&amp;#x27;: 11.44, &amp;#x27;rating&amp;#x27;: 4.32, &amp;#x27;stock&amp;#x27;: 79, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;nail polish&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Nail Couture&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-NAI-NAI-005&amp;#x27;, &amp;#x27;weight&amp;#x27;: 8, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 21.63, &amp;#x27;height&amp;#x27;: 16.48, &amp;#x27;depth&amp;#x27;: 29.84}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 month warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Benjamin Wilson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;benjamin.wilson@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Liam Smith&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;liam.smith@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very unhappy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Clara Berry&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;clara.berry@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 22, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;4063010628104&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 6, &amp;#x27;title&amp;#x27;: &amp;#x27;Calvin Klein CK One&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;quot;CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It&amp;#x27;s a versatile fragrance suitable for everyday wear.&amp;quot;, &amp;#x27;category&amp;#x27;: &amp;#x27;fragrances&amp;#x27;, &amp;#x27;price&amp;#x27;: 49.99, &amp;#x27;discountPercentage&amp;#x27;: 1.89, &amp;#x27;rating&amp;#x27;: 4.37, &amp;#x27;stock&amp;#x27;: 29, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fragrances&amp;#x27;, &amp;#x27;perfumes&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Calvin Klein&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FRA-CAL-CAL-006&amp;#x27;, &amp;#x27;weight&amp;#x27;: 7, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 29.36, &amp;#x27;height&amp;#x27;: 27.76, &amp;#x27;depth&amp;#x27;: 20.72}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 week warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very disappointed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Layla Young&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;layla.young@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Fast shipping!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Daniel Cook&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;daniel.cook@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Not as described!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Jacob Cooper&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;jacob.cooper@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;90 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 9, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;2451534060749&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 7, &amp;#x27;title&amp;#x27;: &amp;#x27;Chanel Coco Noir Eau De&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;fragrances&amp;#x27;, &amp;#x27;price&amp;#x27;: 129.99, &amp;#x27;discountPercentage&amp;#x27;: 16.51, &amp;#x27;rating&amp;#x27;: 4.26, &amp;#x27;stock&amp;#x27;: 58, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fragrances&amp;#x27;, &amp;#x27;perfumes&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Chanel&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FRA-CHA-CHA-007&amp;#x27;, &amp;#x27;weight&amp;#x27;: 7, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 24.5, &amp;#x27;height&amp;#x27;: 25.7, &amp;#x27;depth&amp;#x27;: 25.98}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Ruby Andrews&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;ruby.andrews@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Awesome product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Leah Henderson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;leah.henderson@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very happy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Xavier Wright&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;xavier.wright@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 1, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;4091737746820&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 8, &amp;#x27;title&amp;#x27;: &amp;quot;Dior J&amp;#x27;adore&amp;quot;, &amp;#x27;description&amp;#x27;: &amp;quot;J&amp;#x27;adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.&amp;quot;, &amp;#x27;category&amp;#x27;: &amp;#x27;fragrances&amp;#x27;, &amp;#x27;price&amp;#x27;: 89.99, &amp;#x27;discountPercentage&amp;#x27;: 14.72, &amp;#x27;rating&amp;#x27;: 3.8, &amp;#x27;stock&amp;#x27;: 98, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fragrances&amp;#x27;, &amp;#x27;perfumes&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Dior&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FRA-DIO-DIO-008&amp;#x27;, &amp;#x27;weight&amp;#x27;: 4, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 27.67, &amp;#x27;height&amp;#x27;: 28.28, &amp;#x27;depth&amp;#x27;: 11.83}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 week warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 2 weeks&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great value for money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nicholas Bailey&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nicholas.bailey@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great value for money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Penelope Harper&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;penelope.harper@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Emma Miller&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;emma.miller@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 10, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;1445086097250&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;quot;https://cdn.dummyjson.com/product-images/fragrances/dior-j&amp;#x27;adore/1.webp&amp;quot;, &amp;quot;https://cdn.dummyjson.com/product-images/fragrances/dior-j&amp;#x27;adore/2.webp&amp;quot;, &amp;quot;https://cdn.dummyjson.com/product-images/fragrances/dior-j&amp;#x27;adore/3.webp&amp;quot;], &amp;#x27;thumbnail&amp;#x27;: &amp;quot;https://cdn.dummyjson.com/product-images/fragrances/dior-j&amp;#x27;adore/thumbnail.webp&amp;quot;}, {&amp;#x27;id&amp;#x27;: 9, &amp;#x27;title&amp;#x27;: &amp;#x27;Dolce Shine Eau de&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;quot;Dolce Shine by Dolce &amp;amp; Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It&amp;#x27;s a joyful and youthful scent.&amp;quot;, &amp;#x27;category&amp;#x27;: &amp;#x27;fragrances&amp;#x27;, &amp;#x27;price&amp;#x27;: 69.99, &amp;#x27;discountPercentage&amp;#x27;: 0.62, &amp;#x27;rating&amp;#x27;: 3.96, &amp;#x27;stock&amp;#x27;: 4, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fragrances&amp;#x27;, &amp;#x27;perfumes&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Dolce &amp;amp; Gabbana&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FRA-DOL-DOL-009&amp;#x27;, &amp;#x27;weight&amp;#x27;: 6, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 27.28, &amp;#x27;height&amp;#x27;: 29.88, &amp;#x27;depth&amp;#x27;: 18.3}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 month&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;Low Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Mateo Bennett&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;mateo.bennett@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly recommended!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nolan Gonzalez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nolan.gonzalez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very happy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Aurora Lawson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;aurora.lawson@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 2, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;3023868210708&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 10, &amp;#x27;title&amp;#x27;: &amp;#x27;Gucci Bloom Eau de&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;quot;Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It&amp;#x27;s a modern and romantic scent.&amp;quot;, &amp;#x27;category&amp;#x27;: &amp;#x27;fragrances&amp;#x27;, &amp;#x27;price&amp;#x27;: 79.99, &amp;#x27;discountPercentage&amp;#x27;: 14.39, &amp;#x27;rating&amp;#x27;: 2.74, &amp;#x27;stock&amp;#x27;: 91, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fragrances&amp;#x27;, &amp;#x27;perfumes&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Gucci&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FRA-GUC-GUC-010&amp;#x27;, &amp;#x27;weight&amp;#x27;: 7, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 20.92, &amp;#x27;height&amp;#x27;: 21.68, &amp;#x27;depth&amp;#x27;: 11.2}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;6 months warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very dissatisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Cameron Perez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;cameron.perez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very happy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Daniel Cook&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;daniel.cook@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Addison Wright&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;addison.wright@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 2, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;3170832177880&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 11, &amp;#x27;title&amp;#x27;: &amp;#x27;Annibale Colombo Bed&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;furniture&amp;#x27;, &amp;#x27;price&amp;#x27;: 1899.99, &amp;#x27;discountPercentage&amp;#x27;: 8.57, &amp;#x27;rating&amp;#x27;: 4.77, &amp;#x27;stock&amp;#x27;: 88, &amp;#x27;tags&amp;#x27;: [&amp;#x27;furniture&amp;#x27;, &amp;#x27;beds&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Annibale Colombo&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FUR-ANN-ANN-011&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 28.16, &amp;#x27;height&amp;#x27;: 25.36, &amp;#x27;depth&amp;#x27;: 17.28}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 month&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Christopher West&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;christopher.west@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Vivian Carter&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;vivian.carter@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Mason Wright&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;mason.wright@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 1, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;3610757456581&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 12, &amp;#x27;title&amp;#x27;: &amp;#x27;Annibale Colombo Sofa&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;furniture&amp;#x27;, &amp;#x27;price&amp;#x27;: 2499.99, &amp;#x27;discountPercentage&amp;#x27;: 14.4, &amp;#x27;rating&amp;#x27;: 3.92, &amp;#x27;stock&amp;#x27;: 60, &amp;#x27;tags&amp;#x27;: [&amp;#x27;furniture&amp;#x27;, &amp;#x27;sofas&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Annibale Colombo&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FUR-ANN-ANN-012&amp;#x27;, &amp;#x27;weight&amp;#x27;: 6, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 12.75, &amp;#x27;height&amp;#x27;: 20.55, &amp;#x27;depth&amp;#x27;: 19.06}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;Lifetime warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very unhappy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Christian Perez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;christian.perez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Fast shipping!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Lillian Bishop&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;lillian.bishop@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Lillian Simmons&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;lillian.simmons@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 1, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;1777662847736&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-sofa/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 13, &amp;#x27;title&amp;#x27;: &amp;#x27;Bedside Table African Cherry&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;furniture&amp;#x27;, &amp;#x27;price&amp;#x27;: 299.99, &amp;#x27;discountPercentage&amp;#x27;: 19.09, &amp;#x27;rating&amp;#x27;: 2.87, &amp;#x27;stock&amp;#x27;: 64, &amp;#x27;tags&amp;#x27;: [&amp;#x27;furniture&amp;#x27;, &amp;#x27;bedside tables&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Furniture Co.&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FUR-FUR-BED-013&amp;#x27;, &amp;#x27;weight&amp;#x27;: 2, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 13.47, &amp;#x27;height&amp;#x27;: 24.99, &amp;#x27;depth&amp;#x27;: 27.35}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;5 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Aaliyah Hanson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;aaliyah.hanson@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Liam Smith&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;liam.smith@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly recommended!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Avery Barnes&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;avery.barnes@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 3, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;6441287925979&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/bedside-table-african-cherry/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 14, &amp;#x27;title&amp;#x27;: &amp;#x27;Knoll Saarinen Executive Conference Chair&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;furniture&amp;#x27;, &amp;#x27;price&amp;#x27;: 499.99, &amp;#x27;discountPercentage&amp;#x27;: 2.01, &amp;#x27;rating&amp;#x27;: 4.88, &amp;#x27;stock&amp;#x27;: 26, &amp;#x27;tags&amp;#x27;: [&amp;#x27;furniture&amp;#x27;, &amp;#x27;office chairs&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Knoll&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FUR-KNO-KNO-014&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 13.81, &amp;#x27;height&amp;#x27;: 7.5, &amp;#x27;depth&amp;#x27;: 5.62}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;2 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Waste of money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Ella Cook&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;ella.cook@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very dissatisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Clara Berry&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;clara.berry@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Elena Long&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;elena.long@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;60 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 5, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;8919386859966&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 15, &amp;#x27;title&amp;#x27;: &amp;#x27;Wooden Bathroom Sink With Mirror&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;furniture&amp;#x27;, &amp;#x27;price&amp;#x27;: 799.99, &amp;#x27;discountPercentage&amp;#x27;: 8.8, &amp;#x27;rating&amp;#x27;: 3.59, &amp;#x27;stock&amp;#x27;: 7, &amp;#x27;tags&amp;#x27;: [&amp;#x27;furniture&amp;#x27;, &amp;#x27;bathroom&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Bath Trends&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;FUR-BAT-WOO-015&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 7.98, &amp;#x27;height&amp;#x27;: 8.88, &amp;#x27;depth&amp;#x27;: 28.46}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 3-5 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;Low Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Fast shipping!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Logan Torres&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;logan.torres@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very pleased!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Aria Parker&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;aria.parker@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Dylan Wells&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;dylan.wells@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;60 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 2, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;1958104402873&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/3.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/furniture/wooden-bathroom-sink-with-mirror/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 16, &amp;#x27;title&amp;#x27;: &amp;#x27;Apple&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Fresh and crisp apples, perfect for snacking or incorporating into various recipes.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 1.99, &amp;#x27;discountPercentage&amp;#x27;: 12.62, &amp;#x27;rating&amp;#x27;: 4.19, &amp;#x27;stock&amp;#x27;: 8, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fruits&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-APP-016&amp;#x27;, &amp;#x27;weight&amp;#x27;: 9, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 13.66, &amp;#x27;height&amp;#x27;: 11.01, &amp;#x27;depth&amp;#x27;: 9.73}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 2 weeks&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very satisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Sophia Brown&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;sophia.brown@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very dissatisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Scarlett Bowman&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;scarlett.bowman@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very unhappy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;William Gonzalez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;william.gonzalez@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;90 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 7, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;7962803553314&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/apple/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/apple/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 17, &amp;#x27;title&amp;#x27;: &amp;#x27;Beef Steak&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;High-quality beef steak, great for grilling or cooking to your preferred level of doneness.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 12.99, &amp;#x27;discountPercentage&amp;#x27;: 9.61, &amp;#x27;rating&amp;#x27;: 4.47, &amp;#x27;stock&amp;#x27;: 86, &amp;#x27;tags&amp;#x27;: [&amp;#x27;meat&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-BEE-017&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 18.9, &amp;#x27;height&amp;#x27;: 5.77, &amp;#x27;depth&amp;#x27;: 18.57}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;3 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Tyler&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.tyler@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Fast shipping!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Alexander Jones&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;alexander.jones@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great value for money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Natalie Harris&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;natalie.harris@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;60 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 43, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;5640063409695&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/beef-steak/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/beef-steak/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 18, &amp;#x27;title&amp;#x27;: &amp;#x27;Cat Food&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Nutritious cat food formulated to meet the dietary needs of your feline friend.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 8.99, &amp;#x27;discountPercentage&amp;#x27;: 9.58, &amp;#x27;rating&amp;#x27;: 3.13, &amp;#x27;stock&amp;#x27;: 46, &amp;#x27;tags&amp;#x27;: [&amp;#x27;pet supplies&amp;#x27;, &amp;#x27;cat food&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-FOO-018&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 18.08, &amp;#x27;height&amp;#x27;: 9.26, &amp;#x27;depth&amp;#x27;: 21.86}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Noah Lewis&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;noah.lewis@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very unhappy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Ruby Andrews&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;ruby.andrews@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very disappointed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Ethan Thompson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;ethan.thompson@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 18, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;1483991328610&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cat-food/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 19, &amp;#x27;title&amp;#x27;: &amp;#x27;Chicken Meat&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Fresh and tender chicken meat, suitable for various culinary preparations.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 9.99, &amp;#x27;discountPercentage&amp;#x27;: 13.7, &amp;#x27;rating&amp;#x27;: 3.19, &amp;#x27;stock&amp;#x27;: 97, &amp;#x27;tags&amp;#x27;: [&amp;#x27;meat&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-CHI-019&amp;#x27;, &amp;#x27;weight&amp;#x27;: 1, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 11.03, &amp;#x27;height&amp;#x27;: 22.11, &amp;#x27;depth&amp;#x27;: 16.01}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 month&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Mateo Bennett&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;mateo.bennett@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly recommended!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Jackson Evans&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;jackson.evans@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Not worth the price!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Sadie Morales&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;sadie.morales@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 22, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;8829514594521&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/chicken-meat/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/chicken-meat/2.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/chicken-meat/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 20, &amp;#x27;title&amp;#x27;: &amp;#x27;Cooking Oil&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Versatile cooking oil suitable for frying, saut\u00e9ing, and various culinary applications.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 4.99, &amp;#x27;discountPercentage&amp;#x27;: 9.33, &amp;#x27;rating&amp;#x27;: 4.8, &amp;#x27;stock&amp;#x27;: 10, &amp;#x27;tags&amp;#x27;: [&amp;#x27;cooking essentials&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-COO-020&amp;#x27;, &amp;#x27;weight&amp;#x27;: 5, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 19.95, &amp;#x27;height&amp;#x27;: 27.54, &amp;#x27;depth&amp;#x27;: 24.86}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;Lifetime warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1-2 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very happy with my purchase!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Victoria McDonald&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;victoria.mcdonald@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Hazel Evans&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;hazel.evans@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Zoe Bennett&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;zoe.bennett@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;30 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 46, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;4874727824518&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cooking-oil/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cooking-oil/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 21, &amp;#x27;title&amp;#x27;: &amp;#x27;Cucumber&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 1.49, &amp;#x27;discountPercentage&amp;#x27;: 0.16, &amp;#x27;rating&amp;#x27;: 4.07, &amp;#x27;stock&amp;#x27;: 84, &amp;#x27;tags&amp;#x27;: [&amp;#x27;vegetables&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-CUC-021&amp;#x27;, &amp;#x27;weight&amp;#x27;: 4, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 12.8, &amp;#x27;height&amp;#x27;: 28.38, &amp;#x27;depth&amp;#x27;: 21.34}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;2 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1-2 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Lincoln Kelly&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;lincoln.kelly@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great value for money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Savannah Gomez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;savannah.gomez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;James Davis&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;james.davis@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 2, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;5300066378225&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cucumber/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/cucumber/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 22, &amp;#x27;title&amp;#x27;: &amp;#x27;Dog Food&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Specially formulated dog food designed to provide essential nutrients for your canine companion.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 10.99, &amp;#x27;discountPercentage&amp;#x27;: 10.27, &amp;#x27;rating&amp;#x27;: 4.55, &amp;#x27;stock&amp;#x27;: 71, &amp;#x27;tags&amp;#x27;: [&amp;#x27;pet supplies&amp;#x27;, &amp;#x27;dog food&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-FOO-022&amp;#x27;, &amp;#x27;weight&amp;#x27;: 10, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 16.93, &amp;#x27;height&amp;#x27;: 27.15, &amp;#x27;depth&amp;#x27;: 9.29}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;No warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1-2 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nicholas Edwards&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nicholas.edwards@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Awesome product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Zachary Lee&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;zachary.lee@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nova Cooper&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nova.cooper@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;60 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 43, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;5906686116469&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/dog-food/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/dog-food/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 23, &amp;#x27;title&amp;#x27;: &amp;#x27;Eggs&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 2.99, &amp;#x27;discountPercentage&amp;#x27;: 11.05, &amp;#x27;rating&amp;#x27;: 2.53, &amp;#x27;stock&amp;#x27;: 9, &amp;#x27;tags&amp;#x27;: [&amp;#x27;dairy&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-EGG-023&amp;#x27;, &amp;#x27;weight&amp;#x27;: 2, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 11.42, &amp;#x27;height&amp;#x27;: 7.44, &amp;#x27;depth&amp;#x27;: 16.95}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 week warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Disappointing product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Penelope King&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;penelope.king@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Poor quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Tyler&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.tyler@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very pleased!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Benjamin Foster&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;benjamin.foster@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 32, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;3478638588469&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/eggs/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/eggs/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 24, &amp;#x27;title&amp;#x27;: &amp;#x27;Fish Steak&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Quality fish steak, suitable for grilling, baking, or pan-searing.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 14.99, &amp;#x27;discountPercentage&amp;#x27;: 4.23, &amp;#x27;rating&amp;#x27;: 3.78, &amp;#x27;stock&amp;#x27;: 74, &amp;#x27;tags&amp;#x27;: [&amp;#x27;seafood&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-FIS-024&amp;#x27;, &amp;#x27;weight&amp;#x27;: 6, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 14.95, &amp;#x27;height&amp;#x27;: 26.31, &amp;#x27;depth&amp;#x27;: 11.27}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 month warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 3-5 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Caleb Perkins&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;caleb.perkins@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Isabella Jackson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;isabella.jackson@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great value for money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nathan Dixon&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nathan.dixon@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;60 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 50, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;9595036192098&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/fish-steak/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/fish-steak/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 25, &amp;#x27;title&amp;#x27;: &amp;#x27;Green Bell Pepper&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 1.29, &amp;#x27;discountPercentage&amp;#x27;: 0.16, &amp;#x27;rating&amp;#x27;: 3.25, &amp;#x27;stock&amp;#x27;: 33, &amp;#x27;tags&amp;#x27;: [&amp;#x27;vegetables&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-GRE-025&amp;#x27;, &amp;#x27;weight&amp;#x27;: 2, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 15.33, &amp;#x27;height&amp;#x27;: 26.65, &amp;#x27;depth&amp;#x27;: 14.44}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 month warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly recommended!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Avery Carter&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;avery.carter@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Henry Hill&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;henry.hill@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Addison Wright&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;addison.wright@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;30 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 12, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;2365227493323&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 26, &amp;#x27;title&amp;#x27;: &amp;#x27;Green Chili Pepper&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Spicy green chili pepper, ideal for adding heat to your favorite recipes.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 0.99, &amp;#x27;discountPercentage&amp;#x27;: 1, &amp;#x27;rating&amp;#x27;: 3.66, &amp;#x27;stock&amp;#x27;: 3, &amp;#x27;tags&amp;#x27;: [&amp;#x27;vegetables&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-GRE-026&amp;#x27;, &amp;#x27;weight&amp;#x27;: 7, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 15.38, &amp;#x27;height&amp;#x27;: 18.12, &amp;#x27;depth&amp;#x27;: 19.92}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;2 year warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;Low Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Great product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Luna Russell&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;luna.russell@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Waste of money!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Noah Lewis&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;noah.lewis@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very disappointed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Clara Berry&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;clara.berry@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;30 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 39, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;9335000538563&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 27, &amp;#x27;title&amp;#x27;: &amp;#x27;Honey Jar&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 6.99, &amp;#x27;discountPercentage&amp;#x27;: 14.4, &amp;#x27;rating&amp;#x27;: 3.97, &amp;#x27;stock&amp;#x27;: 34, &amp;#x27;tags&amp;#x27;: [&amp;#x27;condiments&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-HON-027&amp;#x27;, &amp;#x27;weight&amp;#x27;: 2, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 9.28, &amp;#x27;height&amp;#x27;: 21.72, &amp;#x27;depth&amp;#x27;: 17.74}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 month warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1-2 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 1, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very disappointed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Autumn Gomez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;autumn.gomez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Benjamin Wilson&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;benjamin.wilson@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very disappointed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nicholas Edwards&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nicholas.edwards@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;90 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 47, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;6354306346329&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 28, &amp;#x27;title&amp;#x27;: &amp;#x27;Ice Cream&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Creamy and delicious ice cream, available in various flavors for a delightful treat.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 5.49, &amp;#x27;discountPercentage&amp;#x27;: 8.69, &amp;#x27;rating&amp;#x27;: 3.39, &amp;#x27;stock&amp;#x27;: 27, &amp;#x27;tags&amp;#x27;: [&amp;#x27;desserts&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-CRE-028&amp;#x27;, &amp;#x27;weight&amp;#x27;: 1, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 14.83, &amp;#x27;height&amp;#x27;: 15.07, &amp;#x27;depth&amp;#x27;: 24.2}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 month warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 2 weeks&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very pleased!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Elijah Cruz&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;elijah.cruz@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Jace Smith&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;jace.smith@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Sadie Morales&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;sadie.morales@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 42, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;0788954559076&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/ice-cream/1.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/ice-cream/2.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/ice-cream/3.webp&amp;#x27;, &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/ice-cream/4.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/ice-cream/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 29, &amp;#x27;title&amp;#x27;: &amp;#x27;Juice&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Refreshing fruit juice, packed with vitamins and great for staying hydrated.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 3.99, &amp;#x27;discountPercentage&amp;#x27;: 12.06, &amp;#x27;rating&amp;#x27;: 3.94, &amp;#x27;stock&amp;#x27;: 50, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beverages&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-JUI-029&amp;#x27;, &amp;#x27;weight&amp;#x27;: 1, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 18.56, &amp;#x27;height&amp;#x27;: 21.46, &amp;#x27;depth&amp;#x27;: 28.02}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;6 months warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 1 week&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Excellent quality!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nolan Gonzalez&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nolan.gonzalez@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Bella Grant&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;bella.grant@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Awesome product!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Aria Flores&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;aria.flores@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 25, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;6936112580956&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/juice/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/juice/thumbnail.webp&amp;#x27;}, {&amp;#x27;id&amp;#x27;: 30, &amp;#x27;title&amp;#x27;: &amp;#x27;Kiwi&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;groceries&amp;#x27;, &amp;#x27;price&amp;#x27;: 2.49, &amp;#x27;discountPercentage&amp;#x27;: 15.22, &amp;#x27;rating&amp;#x27;: 4.93, &amp;#x27;stock&amp;#x27;: 99, &amp;#x27;tags&amp;#x27;: [&amp;#x27;fruits&amp;#x27;], &amp;#x27;sku&amp;#x27;: &amp;#x27;GRO-BRD-KIW-030&amp;#x27;, &amp;#x27;weight&amp;#x27;: 5, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 19.4, &amp;#x27;height&amp;#x27;: 18.67, &amp;#x27;depth&amp;#x27;: 17.13}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;6 months warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships overnight&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly recommended!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Emily Brown&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;emily.brown@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 2, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not buy again!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Jackson Morales&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;jackson.morales@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Fast shipping!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Nora Russell&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;nora.russell@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;7 days return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 30, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;2530169917252&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/groceries/kiwi/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp&amp;#x27;}], &amp;#x27;total&amp;#x27;: 194, &amp;#x27;skip&amp;#x27;: 0, &amp;#x27;limit&amp;#x27;: 30}\n&#34;}], &#34;tests/api/test_product_api.py::test_get_single_product&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_product_api.py::test_get_single_product&#34;, &#34;duration&#34;: &#34;493 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_product_api.py::test_get_single_product&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;493 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n200\n{&amp;#x27;id&amp;#x27;: 1, &amp;#x27;title&amp;#x27;: &amp;#x27;Essence Mascara Lash Princess&amp;#x27;, &amp;#x27;description&amp;#x27;: &amp;#x27;The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.&amp;#x27;, &amp;#x27;category&amp;#x27;: &amp;#x27;beauty&amp;#x27;, &amp;#x27;price&amp;#x27;: 9.99, &amp;#x27;discountPercentage&amp;#x27;: 10.48, &amp;#x27;rating&amp;#x27;: 2.56, &amp;#x27;stock&amp;#x27;: 99, &amp;#x27;tags&amp;#x27;: [&amp;#x27;beauty&amp;#x27;, &amp;#x27;mascara&amp;#x27;], &amp;#x27;brand&amp;#x27;: &amp;#x27;Essence&amp;#x27;, &amp;#x27;sku&amp;#x27;: &amp;#x27;BEA-ESS-ESS-001&amp;#x27;, &amp;#x27;weight&amp;#x27;: 4, &amp;#x27;dimensions&amp;#x27;: {&amp;#x27;width&amp;#x27;: 15.14, &amp;#x27;height&amp;#x27;: 13.08, &amp;#x27;depth&amp;#x27;: 22.99}, &amp;#x27;warrantyInformation&amp;#x27;: &amp;#x27;1 week warranty&amp;#x27;, &amp;#x27;shippingInformation&amp;#x27;: &amp;#x27;Ships in 3-5 business days&amp;#x27;, &amp;#x27;availabilityStatus&amp;#x27;: &amp;#x27;In Stock&amp;#x27;, &amp;#x27;reviews&amp;#x27;: [{&amp;#x27;rating&amp;#x27;: 3, &amp;#x27;comment&amp;#x27;: &amp;#x27;Would not recommend!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Collins&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.collins@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 4, &amp;#x27;comment&amp;#x27;: &amp;#x27;Very satisfied!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Lucas Gordon&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;lucas.gordon@x.dummyjson.com&amp;#x27;}, {&amp;#x27;rating&amp;#x27;: 5, &amp;#x27;comment&amp;#x27;: &amp;#x27;Highly impressed!&amp;#x27;, &amp;#x27;date&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;reviewerName&amp;#x27;: &amp;#x27;Eleanor Collins&amp;#x27;, &amp;#x27;reviewerEmail&amp;#x27;: &amp;#x27;eleanor.collins@x.dummyjson.com&amp;#x27;}], &amp;#x27;returnPolicy&amp;#x27;: &amp;#x27;No return policy&amp;#x27;, &amp;#x27;minimumOrderQuantity&amp;#x27;: 48, &amp;#x27;meta&amp;#x27;: {&amp;#x27;createdAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;updatedAt&amp;#x27;: &amp;#x27;2025-04-30T09:41:02.053Z&amp;#x27;, &amp;#x27;barcode&amp;#x27;: &amp;#x27;5784719087687&amp;#x27;, &amp;#x27;qrCode&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/public/qr-code.png&amp;#x27;}, &amp;#x27;images&amp;#x27;: [&amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp&amp;#x27;], &amp;#x27;thumbnail&amp;#x27;: &amp;#x27;https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp&amp;#x27;}\n&#34;}], &#34;tests/api/test_product_api.py::test_invalid_product&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;tests/api/test_product_api.py::test_invalid_product&#34;, &#34;duration&#34;: &#34;727 ms&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;tests/api/test_product_api.py::test_invalid_product&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;727 ms&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n404\n{&amp;#x27;message&amp;#x27;: &amp;quot;Product with id &amp;#x27;999999&amp;#x27; not found&amp;quot;}\n&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;api_report.html&#34;}"></div>
+    <script>
+      (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const { getCollapsedCategory, setCollapsedIds } = require('./storage.js')
+
+class DataManager {
+    setManager(data) {
+        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+        const collapsedIds = []
+        const tests = Object.values(data.tests).flat().map((test, index) => {
+            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+            const id = `test_${index}`
+            if (collapsed) {
+                collapsedIds.push(id)
+            }
+            return {
+                ...test,
+                id,
+                collapsed,
+            }
+        })
+        const dataBlob = { ...data, tests }
+        this.data = { ...dataBlob }
+        this.renderData = { ...dataBlob }
+        setCollapsedIds(collapsedIds)
+    }
+
+    get allData() {
+        return { ...this.data }
+    }
+
+    resetRender() {
+        this.renderData = { ...this.data }
+    }
+
+    setRender(data) {
+        this.renderData.tests = [...data]
+    }
+
+    toggleCollapsedItem(id) {
+        this.renderData.tests = this.renderData.tests.map((test) =>
+            test.id === id ? { ...test, collapsed: !test.collapsed } : test,
+        )
+    }
+
+    set allCollapsed(collapsed) {
+        this.renderData = { ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+            { ...test, collapsed }
+        ))] }
+    }
+
+    get testSubset() {
+        return [...this.renderData.tests]
+    }
+
+    get environment() {
+        return this.renderData.environment
+    }
+
+    get initialSort() {
+        return this.data.initialSort
+    }
+}
+
+module.exports = {
+    manager: new DataManager(),
+}
+
+},{"./storage.js":8}],2:[function(require,module,exports){
+const mediaViewer = require('./mediaviewer.js')
+const templateEnvRow = document.getElementById('template_environment_row')
+const templateResult = document.getElementById('template_results-table__tbody')
+
+function htmlToElements(html) {
+    const temp = document.createElement('template')
+    temp.innerHTML = html
+    return temp.content.childNodes
+}
+
+const find = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return elem.querySelector(selector)
+}
+
+const findAll = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return [...elem.querySelectorAll(selector)]
+}
+
+const dom = {
+    getStaticRow: (key, value) => {
+        const envRow = templateEnvRow.content.cloneNode(true)
+        const isObj = typeof value === 'object' && value !== null
+        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+        const valuesElement = htmlToElements(
+            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+        const td = findAll('td', envRow)
+        td[0].textContent = key
+        td[1].appendChild(valuesElement)
+
+        return envRow
+    },
+    getResultTBody: ({ testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed }) => {
+        const resultBody = templateResult.content.cloneNode(true)
+        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+        resultBody.querySelector('tbody').id = testId
+        resultBody.querySelector('.collapsible').dataset.id = id
+
+        resultsTableRow.forEach((html) => {
+            const t = document.createElement('template')
+            t.innerHTML = html
+            resultBody.querySelector('.collapsible').appendChild(t.content)
+        })
+
+        if (log) {
+            // Wrap lines starting with "E" with span.error to color those lines red
+            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+            resultBody.querySelector('.log').innerHTML = wrappedLog
+        } else {
+            resultBody.querySelector('.log').remove()
+        }
+
+        if (collapsed) {
+            resultBody.querySelector('.collapsible > .col-result')?.classList.add('collapsed')
+            resultBody.querySelector('.extras-row').classList.add('hidden')
+        } else {
+            resultBody.querySelector('.collapsible > .col-result')?.classList.remove('collapsed')
+        }
+
+        const media = []
+        extras?.forEach(({ name, format_type, content }) => {
+            if (['image', 'video'].includes(format_type)) {
+                media.push({ path: content, name, format_type })
+            }
+
+            if (format_type === 'html') {
+                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+            }
+        })
+        mediaViewer.setup(resultBody, media)
+
+        // Add custom html from the pytest_html_results_table_html hook
+        tableHtml?.forEach((item) => {
+            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+        })
+
+        return resultBody
+    },
+}
+
+module.exports = {
+    dom,
+    htmlToElements,
+    find,
+    findAll,
+}
+
+},{"./mediaviewer.js":6}],3:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const storageModule = require('./storage.js')
+
+const getFilteredSubSet = (filter) =>
+    manager.allData.tests.filter(({ result }) => filter.includes(result.toLowerCase()))
+
+const doInitFilter = () => {
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+}
+
+const doFilter = (type, show) => {
+    if (show) {
+        storageModule.showCategory(type)
+    } else {
+        storageModule.hideCategory(type)
+    }
+
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+
+    const sortColumn = storageModule.getSort()
+    doSort(sortColumn, true)
+}
+
+module.exports = {
+    doFilter,
+    doInitFilter,
+}
+
+},{"./datamanager.js":1,"./sort.js":7,"./storage.js":8}],4:[function(require,module,exports){
+const { redraw, bindEvents, renderStatic } = require('./main.js')
+const { doInitFilter } = require('./filter.js')
+const { doInitSort } = require('./sort.js')
+const { manager } = require('./datamanager.js')
+const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+function init() {
+    manager.setManager(data)
+    doInitFilter()
+    doInitSort()
+    renderStatic()
+    redraw()
+    bindEvents()
+}
+
+init()
+
+},{"./datamanager.js":1,"./filter.js":3,"./main.js":5,"./sort.js":7}],5:[function(require,module,exports){
+const { dom, find, findAll } = require('./dom.js')
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const { doFilter } = require('./filter.js')
+const {
+    getVisible,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    getSortDirection,
+    possibleFilters,
+} = require('./storage.js')
+
+const removeChildren = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild)
+    }
+}
+
+const renderStatic = () => {
+    const renderEnvironmentTable = () => {
+        const environment = manager.environment
+        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+        const table = document.getElementById('environment')
+        removeChildren(table)
+        rows.forEach((row) => table.appendChild(row))
+    }
+    renderEnvironmentTable()
+}
+
+const addItemToggleListener = (elem) => {
+    elem.addEventListener('click', ({ target }) => {
+        const id = target.parentElement.dataset.id
+        manager.toggleCollapsedItem(id)
+
+        const collapsedIds = getCollapsedIds()
+        if (collapsedIds.includes(id)) {
+            const updated = collapsedIds.filter((item) => item !== id)
+            setCollapsedIds(updated)
+        } else {
+            collapsedIds.push(id)
+            setCollapsedIds(collapsedIds)
+        }
+        redraw()
+    })
+}
+
+const renderContent = (tests) => {
+    const sortAttr = getSort(manager.initialSort)
+    const sortAsc = JSON.parse(getSortDirection())
+    const rows = tests.map(dom.getResultTBody)
+    const table = document.getElementById('results-table')
+    const tableHeader = document.getElementById('results-table-head')
+
+    const newTable = document.createElement('table')
+    newTable.id = 'results-table'
+
+    // remove all sorting classes and set the relevant
+    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+    newTable.appendChild(tableHeader)
+
+    if (!rows.length) {
+        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+        newTable.appendChild(emptyTable)
+    } else {
+        rows.forEach((row) => {
+            if (!!row) {
+                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                find('.logexpander', row).addEventListener('click',
+                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                )
+                newTable.appendChild(row)
+            }
+        })
+    }
+
+    table.replaceWith(newTable)
+}
+
+const renderDerived = () => {
+    const currentFilter = getVisible()
+    possibleFilters.forEach((result) => {
+        const input = document.querySelector(`input[data-test-result="${result}"]`)
+        input.checked = currentFilter.includes(result)
+    })
+}
+
+const bindEvents = () => {
+    const filterColumn = (evt) => {
+        const { target: element } = evt
+        const { testResult } = element.dataset
+
+        doFilter(testResult, element.checked)
+        const collapsedIds = getCollapsedIds()
+        const updated = manager.renderData.tests.map((test) => {
+            return {
+                ...test,
+                collapsed: collapsedIds.includes(test.id),
+            }
+        })
+        manager.setRender(updated)
+        redraw()
+    }
+
+    const header = document.getElementById('environment-header')
+    header.addEventListener('click', () => {
+        const table = document.getElementById('environment')
+        table.classList.toggle('hidden')
+        header.classList.toggle('collapsed')
+    })
+
+    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+        elem.addEventListener('click', filterColumn)
+    })
+
+    findAll('.sortable').forEach((elem) => {
+        elem.addEventListener('click', (evt) => {
+            const { target: element } = evt
+            const { columnType } = element.dataset
+            doSort(columnType)
+            redraw()
+        })
+    })
+
+    document.getElementById('show_all_details').addEventListener('click', () => {
+        manager.allCollapsed = false
+        setCollapsedIds([])
+        redraw()
+    })
+    document.getElementById('hide_all_details').addEventListener('click', () => {
+        manager.allCollapsed = true
+        const allIds = manager.renderData.tests.map((test) => test.id)
+        setCollapsedIds(allIds)
+        redraw()
+    })
+}
+
+const redraw = () => {
+    const { testSubset } = manager
+
+    renderContent(testSubset)
+    renderDerived()
+}
+
+module.exports = {
+    redraw,
+    bindEvents,
+    renderStatic,
+}
+
+},{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
+class MediaViewer {
+    constructor(assets) {
+        this.assets = assets
+        this.index = 0
+    }
+
+    nextActive() {
+        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        return [this.activeFile, this.index]
+    }
+
+    prevActive() {
+        this.index = this.index === 0 ? this.assets.length - 1 : this.index -1
+        return [this.activeFile, this.index]
+    }
+
+    get currentIndex() {
+        return this.index
+    }
+
+    get activeFile() {
+        return this.assets[this.index]
+    }
+}
+
+
+const setup = (resultBody, assets) => {
+    if (!assets.length) {
+        resultBody.querySelector('.media').classList.add('hidden')
+        return
+    }
+
+    const mediaViewer = new MediaViewer(assets)
+    const container = resultBody.querySelector('.media-container')
+    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+    const mediaName = resultBody.querySelector('.media__name')
+    const counter = resultBody.querySelector('.media__counter')
+    const imageEl = resultBody.querySelector('img')
+    const sourceEl = resultBody.querySelector('source')
+    const videoEl = resultBody.querySelector('video')
+
+    const setImg = (media, index) => {
+        if (media?.format_type === 'image') {
+            imageEl.src = media.path
+
+            imageEl.classList.remove('hidden')
+            videoEl.classList.add('hidden')
+        } else if (media?.format_type === 'video') {
+            sourceEl.src = media.path
+
+            videoEl.classList.remove('hidden')
+            imageEl.classList.add('hidden')
+        }
+
+        mediaName.innerText = media?.name
+        counter.innerText = `${index + 1} / ${assets.length}`
+    }
+    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+    const moveLeft = () => {
+        const [media, index] = mediaViewer.prevActive()
+        setImg(media, index)
+    }
+    const doRight = () => {
+        const [media, index] = mediaViewer.nextActive()
+        setImg(media, index)
+    }
+    const openImg = () => {
+        window.open(mediaViewer.activeFile.path, '_blank')
+    }
+    if (assets.length === 1) {
+        container.classList.add('media-container--fullscreen')
+    } else {
+        leftArrow.addEventListener('click', moveLeft)
+        rightArrow.addEventListener('click', doRight)
+    }
+    imageEl.addEventListener('click', openImg)
+}
+
+module.exports = {
+    setup,
+}
+
+},{}],7:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const storageModule = require('./storage.js')
+
+const genericSort = (list, key, ascending, customOrder) => {
+    let sorted
+    if (customOrder) {
+        sorted = list.sort((a, b) => {
+            const aValue = a.result.toLowerCase()
+            const bValue = b.result.toLowerCase()
+
+            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+            // Compare the indices to determine the sort order
+            return aIndex - bIndex
+        })
+    } else {
+        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+    }
+
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const durationSort = (list, ascending) => {
+    const parseDuration = (duration) => {
+        if (duration.includes(':')) {
+            // If it's in the format "HH:mm:ss"
+            const [hours, minutes, seconds] = duration.split(':').map(Number)
+            return (hours * 3600 + minutes * 60 + seconds) * 1000
+        } else {
+            // If it's in the format "nnn ms"
+            return parseInt(duration)
+        }
+    }
+    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const doInitSort = () => {
+    const type = storageModule.getSort(manager.initialSort)
+    const ascending = storageModule.getSortDirection()
+    const list = manager.testSubset
+    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    if (type?.toLowerCase() === 'original') {
+        manager.setRender(list)
+    } else {
+        let sortedList
+        switch (type) {
+        case 'duration':
+            sortedList = durationSort(list, ascending)
+            break
+        case 'result':
+            sortedList = genericSort(list, type, ascending, initialOrder)
+            break
+        default:
+            sortedList = genericSort(list, type, ascending)
+            break
+        }
+        manager.setRender(sortedList)
+    }
+}
+
+const doSort = (type, skipDirection) => {
+    const newSortType = storageModule.getSort(manager.initialSort) !== type
+    const currentAsc = storageModule.getSortDirection()
+    let ascending
+    if (skipDirection) {
+        ascending = currentAsc
+    } else {
+        ascending = newSortType ? false : !currentAsc
+    }
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    const list = manager.testSubset
+    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+    manager.setRender(sortedList)
+}
+
+module.exports = {
+    doInitSort,
+    doSort,
+}
+
+},{"./datamanager.js":1,"./storage.js":8}],8:[function(require,module,exports){
+const possibleFilters = [
+    'passed',
+    'skipped',
+    'failed',
+    'error',
+    'xfailed',
+    'xpassed',
+    'rerun',
+]
+
+const getVisible = () => {
+    const url = new URL(window.location.href)
+    const settings = new URLSearchParams(url.search).get('visible')
+    const lower = (item) => {
+        const lowerItem = item.toLowerCase()
+        if (possibleFilters.includes(lowerItem)) {
+            return lowerItem
+        }
+        return null
+    }
+    return settings === null ?
+        possibleFilters :
+        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+}
+
+const hideCategory = (categoryToHide) => {
+    const url = new URL(window.location.href)
+    const visibleParams = new URLSearchParams(url.search).get('visible')
+    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+    url.searchParams.set('visible', settings)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const showCategory = (categoryToShow) => {
+    if (typeof window === 'undefined') {
+        return
+    }
+    const url = new URL(window.location.href)
+    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+        [...possibleFilters]
+    const settings = [...new Set([categoryToShow, ...currentVisible])]
+    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getSort = (initialSort) => {
+    const url = new URL(window.location.href)
+    let sort = new URLSearchParams(url.search).get('sort')
+    if (!sort) {
+        sort = initialSort || 'result'
+    }
+    return sort
+}
+
+const setSort = (type) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('sort', type)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getCollapsedCategory = (renderCollapsed) => {
+    let categories
+    if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href)
+        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+        switch (true) {
+        case !renderCollapsed && collapsedItems === null:
+            categories = ['passed']
+            break
+        case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+            categories = []
+            break
+        case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+            categories = [...possibleFilters]
+            break
+        default:
+            categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+            break
+        }
+    } else {
+        categories = []
+    }
+    return categories
+}
+
+const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+module.exports = {
+    getVisible,
+    hideCategory,
+    showCategory,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    setSort,
+    getSortDirection,
+    setSortDirection,
+    getCollapsedCategory,
+    possibleFilters,
+}
+
+},{}]},{},[4]);
+    </script>
+  </footer>
+  </body>
+</html>
