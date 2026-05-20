@@ -19,3 +19,43 @@ def valid_login(driver):
 def login_page_verification(driver):
      page = LoginPage(driver)
      assert page.is_dashboard_displayed()
+
+@when("user enters invalid credentials")
+def enter_invalid_credentials(driver):
+    page=LoginPage(driver)
+    page.login_site("demo@wrong.com","demi")
+
+@then("login error should display")
+def verify_display_error(driver):
+    page = LoginPage(driver)
+    assert page.is_error_displayed()
+
+@when("user enters empty username and valid password")
+def empty_username(driver):
+    page = LoginPage(driver)
+    page.login_site("","demo")
+
+@then("empty email error should display")
+def verify_empty_email(driver):
+    page = LoginPage(driver)
+    assert page.empty_email_error()
+
+@when("user enters valid username and empty password")
+def empty_password(driver):
+    page = LoginPage(driver)
+    page.login_site("demo@demo.com","")
+
+@then("empty password error should display")
+def verify_empty_password(driver):
+    page = LoginPage(driver)
+    assert page.empty_pass_error()
+
+@when("user clicks logout button")
+def click_logout(driver):
+    page = LoginPage(driver)
+    page.click_logout()
+
+@then("user should navigate to login page")
+def verify_logout(driver):
+    page = LoginPage(driver)
+    assert page.is_login_page_displayed()
