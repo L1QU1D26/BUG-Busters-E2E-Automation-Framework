@@ -1,26 +1,26 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-
+#import time
 
 class LoginPage(BasePage):
+    USERNAME =(By.ID,"email")
+    PASSWORD= (By.ID,"password")
+    LOGIN_BUTTON= (By.ID,"loginBtn")
+    PRODUCT_TITLE = (
+    By.XPATH,
+    "//a[text()='Shop']"
+)
 
     def __init__(self, driver):
         super().__init__(driver)
 
-        # URL
-        self.url = "https://example.com/login"
+    def login_site(self, email,password):
+        self.driver.find_element(*self.USERNAME).send_keys(email)
+        self.driver.find_element(*self.PASSWORD).send_keys(password)
+        button=self.driver.find_element(*self.LOGIN_BUTTON)
+        button.click()
 
-        # Locators
-        self.username_input = (By.ID, "user-name")
-        self.password_input = (By.ID, "password")
-        self.login_button = (By.ID, "login-button")
-
-    # Open login page
-    def open_login_page(self):
-        self.open_url(self.url)
-
-    # Perform login action
-    def login(self, username, password):
-        self.enter_text(self.username_input, username)
-        self.enter_text(self.password_input, password)
-        self.click(self.login_button)
+    def is_dashboard_displayed(self):
+        text=self.driver.find_element(*self.PRODUCT_TITLE).text 
+        print(text)
+        return text == "Shop"

@@ -13,6 +13,7 @@ class BasePage:
     def open_url(self):
 
         self.driver.get("https://shop.qaautomationlabs.com/")
+        #self.driver.maximize_window()
 
         self.driver.maximize_window()
 
