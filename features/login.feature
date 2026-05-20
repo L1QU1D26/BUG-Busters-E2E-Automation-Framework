@@ -33,3 +33,13 @@ When user enters valid username and password
 And user clicks logout button
 Then user should navigate to login page
 
+
+@session
+Scenario: User should not access dashboard after logout
+
+Given user open login page
+When user enters valid username and password
+And user clicks logout button
+And user clicks browser back button
+Then user should remain on login page
+
