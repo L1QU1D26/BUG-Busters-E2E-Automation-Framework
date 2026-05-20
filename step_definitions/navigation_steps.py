@@ -35,4 +35,5 @@ def click_cart_icon(driver):
 
 @then("the cart page should open")
 def validate_cart_page(driver):
-    assert "cart" in driver.current_url.lower()
+    navigation = NavigationPage(driver)
+    assert navigation.is_cart_page_displayed()
