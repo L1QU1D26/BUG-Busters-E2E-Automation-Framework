@@ -5,14 +5,9 @@ from config.config import BASE_URL
 order_api = OrderAPI(BASE_URL)
 
 
-# Positive Test Case
 def test_create_order():
 
-    response = order_api.create_order(
-        1,
-        1,
-        1
-    )
+    response = order_api.create_valid_order()
 
     response_json = response.json()
 
@@ -37,19 +32,13 @@ def test_create_order():
     assert response_json["products"][0]["id"] == 1
 
 
-# Negative Test Case
 def test_order_with_missing_fields():
 
-    response = order_api.create_order(
-        "",
-        "",
-        ""
-    )
+    response = order_api.create_invalid_order()
 
     response_json = response.json()
 
     print(response.status_code)
     print(response_json)
 
-    # DummyJSON may still return 201 because it is a mock API
     assert response.status_code in [201, 400, 404]

@@ -1,20 +1,25 @@
 from api.base.api_client import APIClient
+from api.payloads.cart_payload import CartPayload
+
 
 class CartAPI(APIClient):
 
     CART_ENDPOINT = "/carts/add"
 
-    def add_to_cart(self, user_id, product_id, quantity):
+    def add_valid_cart(self):
 
-        payload = {
-            "userId": user_id,
-            "products": [
-                {
-                    "id": product_id,
-                    "quantity": quantity
-                }
-            ]
-        }
+        payload = CartPayload.valid_cart_payload()
+
+        response = self.post(
+            self.CART_ENDPOINT,
+            payload
+        )
+
+        return response
+
+    def add_invalid_cart(self):
+
+        payload = CartPayload.invalid_cart_payload()
 
         response = self.post(
             self.CART_ENDPOINT,
