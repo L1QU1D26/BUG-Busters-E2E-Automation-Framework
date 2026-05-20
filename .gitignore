@@ -7,3 +7,5 @@ allure-results/
 allure-report/
 logs/
 screenshots/
+#reports
+reports/
