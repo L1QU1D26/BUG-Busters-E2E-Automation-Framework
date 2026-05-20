@@ -39,10 +39,15 @@ class LoginPage(BasePage):
     
     def click_logout(self):
         self.click(LoginLocators.LOGOUT_BUTTON)
+       
 
     def is_login_page_displayed(self):
-        return "index" in self.driver.current_url
+        #print(self.driver.current_url)
+        WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(LoginLocators.LOGIN_TEXT))
+        return self.is_visible(LoginLocators.LOGIN_TEXT)
+    
 
+    
     
 
     
