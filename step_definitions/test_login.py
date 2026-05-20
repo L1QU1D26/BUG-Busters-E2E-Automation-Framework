@@ -59,3 +59,13 @@ def click_logout(driver):
 def verify_logout(driver):
     page = LoginPage(driver)
     assert page.is_login_page_displayed()
+
+@when("user clicks browser back button")
+def browser_back(driver):
+    driver.back()
+    driver.refresh()
+
+@then("user should remain on login page")
+def validate_session(driver):
+    page = LoginPage(driver)
+    assert page.is_login_page_displayed()
