@@ -4,8 +4,8 @@ from pages.base_page import BasePage
 
 class NavigationPage(BasePage):
 
-    def _init_(self, driver):
-        super()._init_(driver)
+    def __init__(self, driver):
+        super().__init__(driver)
 
         self.products_menu = (
             By.XPATH,
