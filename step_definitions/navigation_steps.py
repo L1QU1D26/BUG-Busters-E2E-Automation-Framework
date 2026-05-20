@@ -1,5 +1,6 @@
 from pytest_bdd import scenarios, given, when, then
 from pages.navigation_page import NavigationPage
+from config.constants import BASE_URL
 
 
 scenarios("../features/navigate.feature")
@@ -7,12 +8,13 @@ scenarios("../features/navigate.feature")
 
 @given("the user is on the homepage")
 def open_homepage(driver):
-    driver.get("https://shop.qaatomationlabs.com/")
+    driver.get(BASE_URL)
 
 
 @when("the user clicks on Products menu")
 def click_products_menu(driver):
     navigation = NavigationPage(driver)
+
     navigation.click_products_menu()
     navigation.click_view_all_products()
 
@@ -24,14 +26,10 @@ def validate_products_page(driver):
     assert navigation.is_products_page_displayed()
 
 
-@given("the user is logged in")
-def user_logged_in(driver):
-    driver.get("https://shop.qaatomationlabs.com/")
-
-
 @when("the user clicks on Cart icon")
 def click_cart_icon(driver):
     navigation = NavigationPage(driver)
+
     navigation.click_cart_icon()
 
 
