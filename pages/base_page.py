@@ -22,6 +22,7 @@ class BasePage:
         self.wait.until(
             EC.element_to_be_clickable(locator)
         ).click()
+        
 
     def enter_text(self, locator, text):
 
