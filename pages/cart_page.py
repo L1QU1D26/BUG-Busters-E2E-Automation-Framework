@@ -25,16 +25,25 @@ class CartPage(BasePage):
     # Methods
 
     def open_category(self, category_name):
-        # Use JS click to bypass CSS dropdown visibility in headless Chrome.
-        # ActionChains hover does not trigger :hover dropdowns in headless mode.
-        category_locator = (
-            CartLocators.CATEGORY_LINK_TEXT[0],
-            category_name
-        )
-
-        self.js_click(category_locator)
-
-        print(f"Opened {category_name} category")
+        """Navigate directly to the category page URL.
+        Uses driver.get() instead of hover/click on the dropdown — the only
+        reliable approach in headless Chrome where CSS :hover never triggers.
+        Login session cookies persist across same-domain navigation calls.
+        """
+        category_urls = {
+            "Mens Wear":    "https://shop.qaautomationlabs.com/mens-wear.php",
+            "Womens Wear":  "https://shop.qaautomationlabs.com/womens-wear.php",
+            "Kids Wear":    "https://shop.qaautomationlabs.com/kids-wear.php",
+            "Electronics":  "https://shop.qaautomationlabs.com/electronics.php",
+        }
+        url = category_urls.get(category_name, "")
+        if url:
+            self.driver.get(url)
+            print(f"Navigated to {category_name}: {url}")
+        else:
+            # Fallback for any unmapped category name
+            self.js_click((CartLocators.CATEGORY_LINK_TEXT[0], category_name))
+            print(f"JS-clicked category link: {category_name}")
 
     def add_product_to_cart(self, product_index):
         try:
