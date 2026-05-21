@@ -1,5 +1,6 @@
 from pytest_bdd import scenarios
 from pytest_bdd import given, when, then
+from pytest_bdd import parsers
 
 from pages.login_page import LoginPage
 from pages.cart_page import CartPage
@@ -8,14 +9,20 @@ from pages.cart_page import CartPage
 scenarios("../features/cart.feature")
 
 
+# ---------------------------------------------------------
 # Common reusable setup
+# ---------------------------------------------------------
+
 def login_and_open_cart(driver):
 
     login = LoginPage(driver)
 
     login.open_url()
 
-    login.login_site("demo@demo.com", "demo")
+    login.login_site(
+        "demo@demo.com",
+        "demo"
+    )
 
     cart_page = CartPage(driver)
 
@@ -26,20 +33,26 @@ def login_and_open_cart(driver):
 # Scenario: Verify user can add product to cart
 # ---------------------------------------------------------
 
-@given('user navigates to the "Mens Wear" category')
-def navigate_to_mens_wear(driver):
+@given(parsers.parse(
+    'user navigates to the {category} category'
+))
+def navigate_to_category(driver, category):
 
     cart_page = login_and_open_cart(driver)
 
-    cart_page.open_mens_wear_category()
+    cart_page.open_category(category)
 
 
-@when("user adds a product to the cart")
-def add_product(driver):
+@when(parsers.parse(
+    "user adds {product_number} to the cart"
+))
+def add_product(driver, product_number):
 
     cart_page = CartPage(driver)
 
-    cart_page.add_product_to_cart()
+    cart_page.add_product_to_cart(
+        int(product_number)
+    )
 
 
 @then("cart count should be updated successfully")
@@ -59,9 +72,9 @@ def add_product_to_cart(driver):
 
     cart_page = login_and_open_cart(driver)
 
-    cart_page.open_mens_wear_category()
+    cart_page.open_category("Electronics")
 
-    cart_page.add_product_to_cart()
+    cart_page.add_product_to_cart(4)
 
 
 @when("user opens the cart page")
@@ -89,9 +102,9 @@ def product_available_in_cart(driver):
 
     cart_page = login_and_open_cart(driver)
 
-    cart_page.open_mens_wear_category()
+    cart_page.open_category("Kids Wear")
 
-    cart_page.add_product_to_cart()
+    cart_page.add_product_to_cart(2)
 
     cart_page.open_cart()
 
@@ -137,11 +150,14 @@ def add_multiple_products(driver):
 
     cart_page = login_and_open_cart(driver)
 
-    cart_page.open_mens_wear_category()
+    cart_page.open_category("Mens Wear")
+    cart_page.add_product_to_cart(4)
 
-    cart_page.add_product_to_cart()
+    cart_page.open_category("Electronics")
+    cart_page.add_product_to_cart(3)
 
-    cart_page.add_product_to_cart()
+    cart_page.open_category("Kids Wear")
+    cart_page.add_product_to_cart(5)
 
     cart_page.open_cart()
 
