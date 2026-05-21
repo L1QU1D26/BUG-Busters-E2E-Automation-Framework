@@ -49,3 +49,8 @@ class BasePage:
         return self.wait.until(
             EC.presence_of_all_elements_located(locator)
         )
+    def find_element(self, locator):
+
+        return self.wait.until(
+            EC.presence_of_element_located(locator)
+        )

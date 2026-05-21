@@ -1,5 +1,6 @@
-from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from locators.navigation_locators import NavigationLocators
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class NavigationPage(BasePage):
@@ -7,19 +8,80 @@ class NavigationPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-        self.products_menu = (By.CSS_SELECTOR, ".nav-link.dropdown-toggle")
-        self.view_all_products = (By.CSS_SELECTOR, ".dropdown-menu a[href='shop.php']")
-        self.cart_icon = (By.ID, "cartdesk")
-        self.product_category = (By.CSS_SELECTOR, ".product-offer")
+    def hover_shop_menu(self):
 
-    def click_products_menu(self):
-        self.click(self.products_menu)
+        shop = self.find_element(
+            NavigationLocators.SHOP_MENU
+        )
 
-    def click_view_all_products(self):
-        self.click(self.view_all_products)
+        ActionChains(self.driver).move_to_element(shop).perform()
+
+    def click_mens_wear(self):
+
+        self.hover_shop_menu()
+
+        self.click(
+            NavigationLocators.MENS_WEAR
+        )
+
+    def click_womens_wear(self):
+
+        self.hover_shop_menu()
+
+        self.click(
+            NavigationLocators.WOMENS_WEAR
+        )
+
+    def click_kids_wear(self):
+
+        self.hover_shop_menu()
+
+        self.click(
+            NavigationLocators.KIDS_WEAR
+        )
+
+    def click_electronics(self):
+
+        self.hover_shop_menu()
+
+        self.click(
+            NavigationLocators.ELECTRONICS
+        )
 
     def click_cart_icon(self):
-        self.click(self.cart_icon)
 
-    def is_products_page_displayed(self):
-        return self.is_displayed(self.product_category)
+        self.click(
+            NavigationLocators.CART_ICON
+        )
+
+    def click_go_back(self):
+
+        self.click(
+            NavigationLocators.GO_BACK
+        )
+
+    # VALIDATIONS
+
+    def is_mens_page_displayed(self):
+
+        return "mens-wear.php" in self.driver.current_url
+
+    def is_womens_page_displayed(self):
+
+        return "womens-wear.php" in self.driver.current_url
+
+    def is_kids_page_displayed(self):
+
+        return "kids-wear.php" in self.driver.current_url
+
+    def is_electronics_page_displayed(self):
+
+        return "electronics.php" in self.driver.current_url
+
+    def is_cart_page_displayed(self):
+
+        return "cart.php" in self.driver.current_url
+
+    def is_shop_page_displayed(self):
+
+        return "shop.php" in self.driver.current_url
