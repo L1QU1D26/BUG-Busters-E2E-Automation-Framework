@@ -46,6 +46,11 @@ class CartPage(BasePage):
         print(f"Opened {category_name} category")
 
     def add_product_to_cart(self, product_index):
+        try:
+            badge = self.driver.find_element(*CartLocators.CART_COUNT)
+            initial_count = int(badge.text) if badge.text.strip() else 0
+        except Exception:
+            initial_count = 0
 
         product_locator = (
             "xpath",
@@ -53,8 +58,17 @@ class CartPage(BasePage):
         )
 
         self.cart_click(product_locator)
-
         print(f"Clicked on product {product_index}")
+
+        # Wait for cart count to update
+        try:
+            self.wait.until(
+                lambda d: int(d.find_element(*CartLocators.CART_COUNT).text or 0) > initial_count
+            )
+            print(f"Cart count updated to {self.get_cart_count()}")
+        except Exception as e:
+            print(f"Warning: Cart count did not update dynamically: {e}")
+
 
     def open_cart(self):
 

@@ -46,8 +46,8 @@ def login_user(login_page):
 @given("user adds a product to cart")
 def add_product_to_cart(cart_page):
 
-    cart_page.open_mens_wear_category()
-    cart_page.add_product_to_cart()
+    cart_page.open_category("Mens Wear")
+    cart_page.add_product_to_cart(1)
     cart_page.open_cart()
 
 
