@@ -13,9 +13,6 @@ class BasePage:
     def open_url(self):
 
         self.driver.get("https://shop.qaautomationlabs.com/")
-        #self.driver.maximize_window()
-
-        self.driver.maximize_window()
 
     def click(self, locator):
 
@@ -55,3 +52,11 @@ class BasePage:
         return self.wait.until(
             EC.presence_of_element_located(locator)
         )
+
+    def js_click(self, locator):
+        """JavaScript click — bypasses CSS visibility for hidden dropdown items.
+        Required for headless Chrome where hover/ActionChains doesn't open dropdowns."""
+        element = self.wait.until(
+            EC.presence_of_element_located(locator)
+        )
+        self.driver.execute_script("arguments[0].click();", element)

@@ -25,23 +25,14 @@ class CartPage(BasePage):
     # Methods
 
     def open_category(self, category_name):
-
-        actions = ActionChains(self.driver)
-
-        shop_element = self.driver.find_element(
-            *CartLocators.SHOP_MENU
-        )
-
-        actions.move_to_element(
-            shop_element
-        ).perform()
-
+        # Use JS click to bypass CSS dropdown visibility in headless Chrome.
+        # ActionChains hover does not trigger :hover dropdowns in headless mode.
         category_locator = (
             CartLocators.CATEGORY_LINK_TEXT[0],
             category_name
         )
 
-        self.click(category_locator)
+        self.js_click(category_locator)
 
         print(f"Opened {category_name} category")
 

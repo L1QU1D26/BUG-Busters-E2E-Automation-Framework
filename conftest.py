@@ -9,19 +9,22 @@ from webdriver_manager.chrome import ChromeDriverManager
 def driver():
     from selenium.webdriver.chrome.options import Options
     options = Options()
-    if os.getenv("HEADLESS") == "true" or os.getenv("GITHUB_ACTIONS") == "true":
-        options.add_argument("--headless")
+    is_headless = os.getenv("HEADLESS") == "true" or os.getenv("GITHUB_ACTIONS") == "true"
+    if is_headless:
+        options.add_argument("--headless=new")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
         options.add_argument("--window-size=1920,1080")
-    
+
     driver = webdriver.Chrome(
         service=Service(
             ChromeDriverManager().install()
         ),
         options=options
     )
-    driver.maximize_window()
+    if not is_headless:
+        driver.maximize_window()
     driver.implicitly_wait(10)
     yield driver
     driver.quit()
