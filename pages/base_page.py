@@ -19,9 +19,16 @@ class BasePage:
 
     def click(self, locator):
 
-        self.wait.until(
+        element = self.wait.until(
             EC.element_to_be_clickable(locator)
-        ).click()
+        )
+
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center'});",
+            element
+        )
+
+        element.click()
 
     def enter_text(self, locator, text):
 
@@ -49,8 +56,42 @@ class BasePage:
         return self.wait.until(
             EC.presence_of_all_elements_located(locator)
         )
+
     def find_element(self, locator):
 
         return self.wait.until(
             EC.presence_of_element_located(locator)
+        )
+
+    def wait_for_url_contains(self, expected_text):
+
+        return self.wait.until(
+            EC.url_contains(expected_text)
+        )
+
+    def wait_for_page_ready(self):
+
+        return self.wait.until(
+            lambda driver: driver.execute_script(
+                "return document.readyState"
+            ) == "complete"
+        )
+
+    def scroll_to_element(self, locator):
+
+        element = self.wait.until(
+            EC.presence_of_element_located(locator)
+        )
+
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({block: 'center'});",
+            element
+        )
+
+        return element
+
+    def scroll_to_bottom(self):
+
+        self.driver.execute_script(
+            "window.scrollTo(0, document.body.scrollHeight);"
         )
