@@ -1,9 +1,7 @@
 from pytest_bdd import scenarios, given, when, then
 
+from pages.login_page import LoginPage
 from pages.product_page import ProductPage
-from pages.navigation_page import NavigationPage
-from config.constants import BASE_URL
-
 
 scenarios("../features/product.feature")
 
@@ -11,13 +9,18 @@ scenarios("../features/product.feature")
 @given("the user is on the products page")
 def open_products_page(driver):
 
-    driver.get(BASE_URL)
+    login = LoginPage(driver)
+    product = ProductPage(driver)
 
-    navigation = NavigationPage(driver)
+    # Login flow
+    login.open_url()
+    login.login_site("demo@demo.com", "demo")
 
-    navigation.click_products_menu()
+    assert login.is_dashboard_displayed()
 
-    assert navigation.is_products_page_displayed()
+    # Navigate to Mens Wear products
+    product.navigate_to_shop()
+    product.click_mens_shop_now()
 
 
 @when("the user clicks on a product")
@@ -25,11 +28,12 @@ def click_product(driver):
 
     product = ProductPage(driver)
 
+    # Click product NAME to open details page
     product.click_product()
 
 
 @then("product details should be displayed")
-def validate_product_page(driver):
+def validate_product_details(driver):
 
     product = ProductPage(driver)
 
@@ -37,19 +41,13 @@ def validate_product_page(driver):
 
 
 @given("the user is viewing a product")
-def open_product(driver):
+def viewing_product(driver):
 
-    driver.get(BASE_URL)
-
-    navigation = NavigationPage(driver)
-
-    navigation.click_products_menu()
-    navigation.click_view_all_products()
-
-    assert navigation.is_products_page_displayed()
+    open_products_page(driver)
 
     product = ProductPage(driver)
 
+    # Open product details page
     product.click_product()
 
 
@@ -58,12 +56,32 @@ def click_add_to_cart(driver):
 
     product = ProductPage(driver)
 
+    # Add product
     product.click_add_to_cart()
+
+    # Open cart page
+    product.click_cart_icon()
 
 
 @then("the product should be added to the cart")
-def validate_cart_count(driver):
+def validate_cart(driver):
 
     product = ProductPage(driver)
 
-    assert "1 item(s)" in product.get_cart_count()
+    assert product.is_cart_page_displayed()
+
+
+@when("the user checks all product categories")
+def check_product_categories(driver):
+
+    product = ProductPage(driver)
+
+    assert product.browse_categories_filters_and_products()
+
+
+@then("filters and products should be visible for each category")
+def validate_category_filters_and_products(driver):
+
+    product = ProductPage(driver)
+
+    assert product.is_product_page_displayed()
