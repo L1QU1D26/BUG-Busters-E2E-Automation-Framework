@@ -1,4 +1,4 @@
-from api.base.api_client import APIClient
+from api.Base.api_client import APIClient
 
 class ProductAPI(APIClient):
 

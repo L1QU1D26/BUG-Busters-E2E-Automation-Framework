@@ -1,12 +1,25 @@
-def order_payload(product_id, quantity):
+class OrderPayload:
 
-    payload = {
-        "products": [
-            {
-                "id": product_id,
-                "quantity": quantity
-            }
-        ]
-    }
+    @staticmethod
+    def valid_order_payload():
+        return {
+            "userId": 1,
+            "products": [
+                {
+                    "id": 1,
+                    "quantity": 1
+                }
+            ]
+        }
 
-    return payload
+    @staticmethod
+    def invalid_order_payload():
+        return {
+            "userId": "",
+            "products": [
+                {
+                    "id": "",
+                    "quantity": ""
+                }
+            ]
+        }

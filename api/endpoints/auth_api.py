@@ -1,22 +1,29 @@
-from api.base.api_client import APIClient
-from api.payloads.login_payload import login_payload
+from api.Base.api_client import APIClient
+from api.payloads.login_payload import LoginPayload
+
 
 class AuthAPI(APIClient):
 
     LOGIN_ENDPOINT = "/auth/login"
 
-    def login(self, username, password):
+    def valid_login(self):
 
-        payload = login_payload(username, password)
-
-        headers = {
-            "Content-Type": "application/json"
-        }
+        payload = LoginPayload.valid_login_payload()
 
         response = self.post(
             self.LOGIN_ENDPOINT,
-            payload,
-            headers
+            payload
+        )
+
+        return response
+
+    def invalid_login(self):
+
+        payload = LoginPayload.invalid_login_payload()
+
+        response = self.post(
+            self.LOGIN_ENDPOINT,
+            payload
         )
 
         return response
