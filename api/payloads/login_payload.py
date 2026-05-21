@@ -1,25 +1,15 @@
-class OrderPayload:
+class LoginPayload:
 
     @staticmethod
-    def valid_order_payload():
+    def valid_login_payload():
         return {
-            "userId": 1,
-            "products": [
-                {
-                    "id": 1,
-                    "quantity": 1
-                }
-            ]
+            "username": "emilys",
+            "password": "emilyspass"
         }
 
     @staticmethod
-    def invalid_order_payload():
+    def invalid_login_payload():
         return {
-            "userId": "",
-            "products": [
-                {
-                    "id": "",
-                    "quantity": ""
-                }
-            ]
+            "username": "wrong_user",
+            "password": "wrong_password"
         }
