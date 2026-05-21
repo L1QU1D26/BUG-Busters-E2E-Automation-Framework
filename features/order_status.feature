@@ -10,9 +10,16 @@ Feature: Order Confirmation
       | last_name  | Jangam    |
       | address    | Lingampet |
       | city       | Kamareddy |
+      | state      | Telangana |
       | zip_code   | 503108    |
+    And clicks on the continue button
+    Then user should see the order confirmation
+
+    
+  Scenario: Verify place order button is visible on confirm page
+    Then the place order button should be visible
 
   Scenario: Verify successful order placement
     When user clicks on place order button
-    Then the order confirmation page should load successfully
-    And a success message "Your order has been placed successfully." should be displayed
+    Then the thank you page should load successfully
+    And a thank you message "Thank You for Your Order!" should be displayed
