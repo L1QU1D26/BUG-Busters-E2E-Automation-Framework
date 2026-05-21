@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+import time
 from pages.base_page import BasePage
 
 
@@ -40,22 +42,76 @@ class CartPage(BasePage):
             "cartCount"
         )
 
+           # more locators...
+
+
+    def cart_click(self, locator):
+
+        element = self.driver.find_element(*locator)
+
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView(true);",
+            element
+        )
+
+        element.click()
+
     # Methods
+
     def open_mens_wear_category(self):
-        self.click(self.shop_menu)
+
+        actions = ActionChains(self.driver)
+
+        shop_element = self.driver.find_element(*self.shop_menu)
+
+        actions.move_to_element(shop_element).perform()
+
         self.click(self.mens_wear_category)
 
+        print("Clicked on Mens Wear category")
+
+        print(self.driver.current_url)
+
+        time.sleep(4)
+
     def add_product_to_cart(self):
+
         self.click(self.add_to_cart_button)
 
+        print("Clicked on Add to Cart button")
+
+        time.sleep(4)
+
     def open_cart(self):
+
         self.click(self.cart_icon)
 
-    def update_product_quantity(self, quantity):
-        self.enter_text(self.quantity_input, str(quantity))
+        time.sleep(4)
 
+    def update_product_quantity(self, quantity):
+       
+
+            quantity_element = self.driver.find_element(
+                *self.quantity_input
+            )
+
+            quantity_element.clear()
+
+            quantity_element = self.driver.find_element(
+                *self.quantity_input
+            )
+
+            quantity_element.send_keys(str(quantity))
+
+            time.sleep(4)
+
+    print("Quantity updated successfully")
     def remove_product_from_cart(self):
+
         self.click(self.remove_button)
+        time.sleep(4)
 
     def get_cart_count(self):
+
         return self.get_text(self.cart_count)
+        

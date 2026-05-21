@@ -1,26 +1,54 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
-#import time
+from selenium.webdriver.support import expected_conditions as EC
+from locators.authentication import LoginLocators
+from selenium.webdriver.support.ui import WebDriverWait
 
 class LoginPage(BasePage):
-    USERNAME =(By.ID,"email")
-    PASSWORD= (By.ID,"password")
-    LOGIN_BUTTON= (By.ID,"loginBtn")
-    PRODUCT_TITLE = (
-    By.XPATH,
-    "//a[text()='Shop']"
-)
+    
 
     def __init__(self, driver):
         super().__init__(driver)
 
     def login_site(self, email,password):
-        self.driver.find_element(*self.USERNAME).send_keys(email)
-        self.driver.find_element(*self.PASSWORD).send_keys(password)
-        button=self.driver.find_element(*self.LOGIN_BUTTON)
-        button.click()
+        self.enter_text(LoginLocators.USERNAME,email)
+        self.enter_text(LoginLocators.PASSWORD,password)
+        self.click(LoginLocators.LOGIN_BUTTON)
+        
 
-    def is_dashboard_displayed(self):
-        text=self.driver.find_element(*self.PRODUCT_TITLE).text 
+    def is_dashboard_displayed(self):       
+        text=self.get_text(LoginLocators.PRODUCT_TITLE)
         print(text)
         return text == "Shop"
+    
+    def is_error_displayed(self):
+        return self.is_visible(
+            LoginLocators.ERROR_MESSAGE
+        )
+    
+    def empty_email_error(self):
+        return self.is_visible(
+            LoginLocators.EMPTY_EMAIL
+        )
+
+    
+    def empty_pass_error(self):
+        return self.is_visible(
+            LoginLocators.EMPTY_PASS
+        )
+    
+    def click_logout(self):
+        self.click(LoginLocators.LOGOUT_BUTTON)
+       
+
+    def is_login_page_displayed(self):
+        #print(self.driver.current_url)
+        WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(LoginLocators.LOGIN_TEXT))
+        return self.is_visible(LoginLocators.LOGIN_TEXT)
+    
+
+    
+    
+
+    
+    

@@ -1,6 +1,6 @@
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
+from locators.checkout_locators import CheckoutLocators
 
 
 class CheckoutValidationPage(BasePage):
@@ -8,50 +8,24 @@ class CheckoutValidationPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-        # Locators
-        self.proceed_to_checkout_btn = (
-            By.XPATH,
-            "//a[contains(translate(text(), "
-            "'ABCDEFGHIJKLMNOPQRSTUVWXYZ', "
-            "'abcdefghijklmnopqrstuvwxyz'), 'proceed')]"
-        )
-
-        # Mandatory Billing Field Locators
-        self.first_name = (By.ID, "firstname")
-        self.last_name = (By.ID, "lastname")
-        self.address = (By.ID, "address")
-        self.city = (By.ID, "city")
-        self.postcode = (By.ID, "pincode")
-        self.phone = (By.ID, "phone")
-        self.email = (By.ID, "email")
-
-        # Continue Button Locator
-        self.continue_btn = (By.ID, "continue")
-
-        # Validation Errors Locator
-        self.error_messages = (
-            By.CSS_SELECTOR,
-            ".error-message, .woocommerce-error li, span.error"
-        )
-
-        # Required Page URLs
-        self.cart_page_url = "https://shop.qaautomationlabs.com/cart.php"
-        self.checkout_page_url = "https://shop.qaautomationlabs.com/checkout.php"
-        self.confirm_page_url = "https://shop.qaautomationlabs.com/confirm.php"
+        self.locators = CheckoutLocators
+        self.cart_page_url = CheckoutLocators.CART_PAGE_URL
+        self.checkout_page_url = CheckoutLocators.CHECKOUT_PAGE_URL
+        self.confirm_page_url = CheckoutLocators.CONFIRM_PAGE_URL
 
     def is_cart_page_displayed(self):
         """Validates that the user has landed on the cart page."""
-        self.wait.until(EC.url_contains("cart.php"))
+        self.wait.until(EC.url_contains(self.cart_page_url))
         return self.driver.current_url == self.cart_page_url
 
     def click_proceed_to_checkout(self):
         """Clicks the Proceed Checkout button."""
 
         try:
-            self.click(self.proceed_to_checkout_btn)
+            self.click(self.locators.PROCEED_TO_CHECKOUT)
         except Exception:
             proceed_btn = self.wait.until(
-                EC.element_to_be_clickable(self.proceed_to_checkout_btn)
+                EC.element_to_be_clickable(self.locators.PROCEED_TO_CHECKOUT)
             )
             self.driver.execute_script(
                 "arguments[0].scrollIntoView({block: 'center'});",
@@ -64,7 +38,7 @@ class CheckoutValidationPage(BasePage):
 
     def is_checkout_page_displayed(self):
         """Validates that the user has landed on the checkout page."""
-        self.wait.until(EC.url_contains("checkout.php"))
+        self.wait.until(EC.url_contains(self.locators.CHECKOUT_PAGE_URL))
         return self.driver.current_url == self.checkout_page_url
 
     def fill_all_required_details(
@@ -73,28 +47,30 @@ class CheckoutValidationPage(BasePage):
         last_name,
         address,
         city,
+        state,
         postcode,
         phone,
         email
     ):
         """Fills out the billing form."""
 
-        self.enter_text(self.first_name, first_name)
-        self.enter_text(self.last_name, last_name)
-        self.enter_text(self.address, address)
-        self.enter_text(self.city, city)
-        self.enter_text(self.postcode, postcode)
-        self.enter_text(self.phone, phone)
-        self.enter_text(self.email, email)
+        self.enter_text(self.locators.FIRST_NAME, first_name)
+        self.enter_text(self.locators.LAST_NAME, last_name)
+        self.enter_text(self.locators.ADDRESS, address)
+        self.enter_text(self.locators.CITY, city)
+        self.enter_text(self.locators.STATE, state)
+        self.enter_text(self.locators.PINCODE, postcode)
+        self.enter_text(self.locators.PHONE, phone)
+        self.enter_text(self.locators.EMAIL, email)
 
     def click_continue(self):
         """Clicks the Continue button."""
 
         try:
-            self.click(self.continue_btn)
+            self.click(self.locators.CONTINUE_BUTTON)
         except Exception:
             btn = self.wait.until(
-                EC.element_to_be_clickable(self.continue_btn)
+                EC.element_to_be_clickable(self.locators.CONTINUE_BUTTON)
             )
             self.driver.execute_script(
                 "arguments[0].scrollIntoView({block: 'center'});",
@@ -107,28 +83,37 @@ class CheckoutValidationPage(BasePage):
 
     def is_confirm_page_displayed(self):
         """Validates that the user has landed on the confirm page."""
-        self.wait.until(EC.url_contains("confirm.php"))
+        self.wait.until(EC.url_contains(self.locators.CONFIRM_PAGE_URL))
         return self.driver.current_url == self.confirm_page_url
 
     def clear_address_field(self):
-        """Clears only address field."""
+        """Clears only the address field."""
 
         addr_field = self.wait.until(
-            EC.presence_of_element_located(self.address)
+            EC.presence_of_element_located(self.locators.ADDRESS)
         )
         addr_field.clear()
+
+    def clear_first_name_field(self):
+        """Clears only the first name field."""
+
+        first_name_field = self.wait.until(
+            EC.presence_of_element_located(self.locators.FIRST_NAME)
+        )
+        first_name_field.clear()
 
     def clear_all_mandatory_fields(self):
         """Clears all mandatory checkout fields."""
 
         fields_to_clear = [
-            self.first_name,
-            self.last_name,
-            self.address,
-            self.city,
-            self.postcode,
-            self.phone,
-            self.email
+            self.locators.FIRST_NAME,
+            self.locators.LAST_NAME,
+            self.locators.ADDRESS,
+            self.locators.CITY,
+            self.locators.STATE,
+            self.locators.PINCODE,
+            self.locators.PHONE,
+            self.locators.EMAIL
         ]
 
         for locator in fields_to_clear:
@@ -140,5 +125,5 @@ class CheckoutValidationPage(BasePage):
     def get_validation_errors(self):
         """Returns all validation error messages."""
 
-        errors = self.get_elements(self.error_messages)
+        errors = self.get_elements(self.locators.ERROR_MESSAGES)
         return [error.text for error in errors]
