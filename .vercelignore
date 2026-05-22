@@ -1,0 +1,29 @@
+# Ignore Python virtual environments
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Ignore backend test automation directories
+api/
+step_definitions/
+tests/
+pages/
+locators/
+utils/
+config/
+data/
+drivers/
+logs/
+reports/
+
+# Ignore Python dependencies and test configurations
+requirements.txt
+conftest.py
+pytest.ini
+
+# Ignore documentation markdown files (only keep docs/ index.html and presentation.html)
+README.md
+capstone_presentation.md
+defect_log.md
