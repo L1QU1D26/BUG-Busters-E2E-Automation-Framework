@@ -37,7 +37,13 @@ def pytest_runtest_makereport(item, call):
 
     if rep.when == "call":
         try:
-            web_driver = item._request.getfixturevalue("driver")
+            web_driver = None
+            if hasattr(item._request, "_fixture_defs") and "driver" in item._request._fixture_defs:
+                fixture_def = item._request._fixture_defs["driver"]
+                cached = getattr(fixture_def, "cached_result", None)
+                if cached is not None and isinstance(cached, tuple) and len(cached) > 0:
+                    web_driver = cached[0]
+
             if web_driver:
                 screenshots_dir = os.path.join(os.path.dirname(__file__), "screenshots")
                 os.makedirs(screenshots_dir, exist_ok=True)
