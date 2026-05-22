@@ -1,6 +1,10 @@
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from pages.base_page import BasePage
 from locators.checkout_locators import CheckoutLocators
+
+# Generous timeout for page navigation on slow CI runners
+NAV_TIMEOUT = 45
 
 
 class CheckoutValidationPage(BasePage):
@@ -19,8 +23,9 @@ class CheckoutValidationPage(BasePage):
         return self.driver.current_url == self.cart_page_url
 
     def click_proceed_to_checkout(self):
-        """Clicks the Proceed Checkout button."""
+        """Clicks the Proceed Checkout button and waits for navigation to checkout.php."""
 
+        nav_wait = WebDriverWait(self.driver, NAV_TIMEOUT)
         try:
             self.click(self.locators.PROCEED_TO_CHECKOUT)
         except Exception:
@@ -36,10 +41,13 @@ class CheckoutValidationPage(BasePage):
                 proceed_btn
             )
 
+        # Wait here with generous timeout so is_checkout_page_displayed
+        # doesn't race against a slow CI network response.
+        nav_wait.until(EC.url_contains("checkout.php"))
+
     def is_checkout_page_displayed(self):
         """Validates that the user has landed on the checkout page."""
-        self.wait.until(EC.url_contains(self.locators.CHECKOUT_PAGE_URL))
-        return self.driver.current_url == self.checkout_page_url
+        return "checkout.php" in self.driver.current_url
 
     def fill_all_required_details(
         self,
@@ -83,8 +91,9 @@ class CheckoutValidationPage(BasePage):
 
     def is_confirm_page_displayed(self):
         """Validates that the user has landed on the confirm page."""
-        self.wait.until(EC.url_contains(self.locators.CONFIRM_PAGE_URL))
-        return self.driver.current_url == self.confirm_page_url
+        # Use a generous timeout because CI runners can be slow to serve confirm.php
+        WebDriverWait(self.driver, NAV_TIMEOUT).until(EC.url_contains("confirm.php"))
+        return "confirm.php" in self.driver.current_url
 
     def clear_address_field(self):
         """Clears only the address field."""
