@@ -3,7 +3,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
+from datetime import datetime
 
 @pytest.fixture(scope="function")
 def driver():
@@ -35,26 +35,25 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     rep = outcome.get_result()
 
-    if rep.when == "call" and rep.failed:
+    if rep.when == "call":
         try:
-            if "driver" in item.fixturenames:
-                web_driver = item.funcargs.get("driver")
-                if web_driver:
-                    screenshots_dir = os.path.join(os.path.dirname(__file__), "screenshots")
-                    os.makedirs(screenshots_dir, exist_ok=True)
-                    
-                    screenshot_path = os.path.join(screenshots_dir, f"{item.name}.png")
-                    web_driver.save_screenshot(screenshot_path)
-                    print(f"\nScreenshot saved to: {screenshot_path}")
-                    
-                    try:
-                        import allure
-                        allure.attach.file(
-                            screenshot_path,
-                            name="failure-screenshot",
-                            attachment_type=allure.attachment_type.PNG
-                        )
-                    except ImportError:
-                        pass
+            web_driver = item._request.getfixturevalue("driver")
+            if web_driver:
+                screenshots_dir = os.path.join(os.path.dirname(__file__), "screenshots")
+                os.makedirs(screenshots_dir, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                screenshot_path = os.path.join(screenshots_dir, f"{item.name}_{timestamp}.png")
+                web_driver.save_screenshot(screenshot_path)
+                print(f"\nScreenshot saved to: {screenshot_path}")
+                
+                try:
+                    import allure
+                    allure.attach.file(
+                        screenshot_path,
+                        name=item.name,
+                        attachment_type=allure.attachment_type.PNG
+                    )
+                except ImportError:
+                    pass
         except Exception as e:
-            print(f"Failed to capture failure screenshot: {e}")
+            print(f"Failed to capture screenshot: {e}")
