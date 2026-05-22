@@ -8,45 +8,17 @@ class NavigationPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    def hover_shop_menu(self):
-
-        shop = self.find_element(
-            NavigationLocators.SHOP_MENU
-        )
-
-        ActionChains(self.driver).move_to_element(shop).perform()
-
     def click_mens_wear(self):
-
-        self.hover_shop_menu()
-
-        self.click(
-            NavigationLocators.MENS_WEAR
-        )
+        self.js_click(NavigationLocators.MENS_WEAR)
 
     def click_womens_wear(self):
-
-        self.hover_shop_menu()
-
-        self.click(
-            NavigationLocators.WOMENS_WEAR
-        )
+        self.js_click(NavigationLocators.WOMENS_WEAR)
 
     def click_kids_wear(self):
-
-        self.hover_shop_menu()
-
-        self.click(
-            NavigationLocators.KIDS_WEAR
-        )
+        self.js_click(NavigationLocators.KIDS_WEAR)
 
     def click_electronics(self):
-
-        self.hover_shop_menu()
-
-        self.click(
-            NavigationLocators.ELECTRONICS
-        )
+        self.js_click(NavigationLocators.ELECTRONICS)
 
     def click_cart_icon(self):
 
