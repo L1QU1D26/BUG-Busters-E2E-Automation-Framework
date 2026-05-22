@@ -37,6 +37,8 @@ def login_user(login_page):
         "demo"
     )
 
+    assert login_page.is_dashboard_displayed()
+
 
 @given("user adds a product to cart")
 def add_product_to_cart(cart_page):
