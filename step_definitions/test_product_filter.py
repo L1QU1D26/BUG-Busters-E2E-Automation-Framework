@@ -48,6 +48,15 @@ def select_filter(driver, filter_name):
 @then("the product count should be updated and be less than the initial count")
 def verify_count_decreased(driver, context):
     product_page = ProductPage(driver)
+    
+    # Wait for the product count to decrease (AJAX update)
+    try:
+        product_page.wait.until(
+            lambda d: product_page.get_product_count() < context["initial_count"]
+        )
+    except Exception:
+        pass
+        
     current_count = product_page.get_product_count()
     print(f"Current count after filter: {current_count}")
     assert current_count < context["initial_count"], (
@@ -74,6 +83,15 @@ def note_current_count(driver, context):
 @then("the product count should change accordingly")
 def verify_count_changed(driver, context):
     product_page = ProductPage(driver)
+    
+    # Wait for the product count to change from the initial count
+    try:
+        product_page.wait.until(
+            lambda d: product_page.get_product_count() != context["initial_count"]
+        )
+    except Exception:
+        pass
+        
     current_count = product_page.get_product_count()
     print(f"Current count after multiple filters: {current_count}")
     assert current_count >= 0
@@ -82,6 +100,15 @@ def verify_count_changed(driver, context):
 @then("no products should be displayed in the list")
 def verify_no_products(driver):
     product_page = ProductPage(driver)
+    
+    # Wait for the product count to become 0
+    try:
+        product_page.wait.until(
+            lambda d: product_page.get_product_count() == 0
+        )
+    except Exception:
+        pass
+        
     current_count = product_page.get_product_count()
     print(f"Count for incompatible filters: {current_count}")
     assert current_count == 0, f"Expected 0 products but found {current_count}"

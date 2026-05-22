@@ -86,7 +86,7 @@ class ProductPage(BasePage):
             f"//label[contains(text(),'{filter_name}')]"
         )
 
-        self.click(locator)
+        self.js_click(locator)
         print(f"Clicked filter: {filter_name}")
 
     def scroll_page(self):
