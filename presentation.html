@@ -64,16 +64,109 @@
       margin-bottom: 2em !important;
     }
     .team-cards {
-      display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
       margin-top: 1.5em;
+      width: 100%;
     }
     .team-card {
-      background: var(--card-bg); border: 1px solid var(--card-border);
-      border-radius: 12px; padding: 12px 20px; font-size: 0.5em;
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.5em;
       backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 64px;
+      box-sizing: border-box;
     }
-    .team-card .name { color: #fff; font-weight: 600; margin-bottom: 2px; }
-    .team-card .role { color: rgba(255,255,255,0.45); font-size: 0.9em; }
+    .team-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #6c63ff;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+    .team-card .name {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 2px;
+      font-size: 1.1em;
+    }
+    .team-card .role {
+      color: #a89fff;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+    .team-card .t-details {
+      position: absolute;
+      bottom: 115%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 240px;
+      background: rgba(13, 11, 22, 0.96);
+      border: 1px solid #6c63ff;
+      border-radius: 10px;
+      padding: 12px 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      font-size: 0.9em;
+    }
+    .team-card .t-details::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: #6c63ff transparent transparent transparent;
+    }
+    .team-card:hover .t-details {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    .team-card .t-details-title {
+      font-size: 0.85em;
+      font-weight: 700;
+      color: #6c63ff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 4px;
+      text-align: left;
+    }
+    .team-card .t-details-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .team-card .t-details-list li {
+      font-size: 0.8em;
+      color: #ccc;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 10px;
+    }
+    .team-card .t-details-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #a89fff;
+    }
 
     /* ── STAT CARDS ── */
     .stat-grid {
@@ -289,10 +382,109 @@
       </div>
 
       <div class="team-cards">
-        <div class="team-card"><div class="name">Subham Sudeepta</div><div class="role">Framework Lead</div></div>
-        <div class="team-card"><div class="name">Sandeep Sai</div><div class="role">Cart Module</div></div>
-        <div class="team-card"><div class="name">Raghuram</div><div class="role">API Module</div></div>
-        <div class="team-card"><div class="name">BUG-Busters</div><div class="role">Collective</div></div>
+        <div class="team-card">
+          <div class="name">Subham Sudeepta</div>
+          <div class="role">Project Lead &amp; Framework Core</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Framework architecture</li>
+              <li>Driver setup &amp; config</li>
+              <li>Base Page Object pattern</li>
+              <li>Reusable utility wrappers</li>
+              <li>Pytest config &amp; integration</li>
+              <li>Overall integration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Anand Srivastava</div>
+          <div class="role">Authentication Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Login workflows &amp; tests</li>
+              <li>Registration workflows</li>
+              <li>Logout verification</li>
+              <li>Session state validations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Anand Sai</div>
+          <div class="role">Product &amp; Navigation Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Product search verification</li>
+              <li>Filters &amp; category sorting</li>
+              <li>Product page validations</li>
+              <li>End-to-end navigation flows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Sandeep Sai</div>
+          <div class="role">Cart Management Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Add &amp; remove cart items</li>
+              <li>Quantity updates &amp; bounds</li>
+              <li>Cart state &amp; validations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Ganesh Jangam</div>
+          <div class="role">Checkout &amp; Orders Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Multi-step checkout flows</li>
+              <li>Shipping address validations</li>
+              <li>Order confirmation matching</li>
+              <li>Checkout negative scenarios</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Raghuram</div>
+          <div class="role">API Testing Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Backend API validations</li>
+              <li>Postman / Python Requests</li>
+              <li>Response assertions &amp; codes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Sidharth</div>
+          <div class="role">Pytest-BDD Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Gherkin feature files</li>
+              <li>Step definition mappings</li>
+              <li>Behavior Driven tests</li>
+            </ul>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="name">Nithin</div>
+          <div class="role">Reporting &amp; CI/CD Lead</div>
+          <div class="t-details">
+            <div class="t-details-title">Key Contributions</div>
+            <ul class="t-details-list">
+              <li>Allure / Pytest-HTML reports</li>
+              <li>Log collection &amp; screenshots</li>
+              <li>Parallel test execution</li>
+              <li>GitHub Actions &amp; CI-CD runs</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
