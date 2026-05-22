@@ -54,20 +54,20 @@
     .badge-pink   { background: rgba(255,101,132,0.2); border: 1px solid #ff6584; color: #ff8fa3; }
 
     .title-big {
-      font-size: 2.4em !important;
+      font-size: 2.2em !important;
       background: linear-gradient(135deg, #fff 30%, #a89fff 70%, #6c63ff 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; line-height: 1.1; margin-bottom: 0.3em !important;
+      background-clip: text; line-height: 1.1; margin-bottom: 0.2em !important;
     }
     .subtitle-text {
-      color: rgba(255,255,255,0.55); font-size: 0.75em; font-weight: 400;
-      margin-bottom: 2em !important;
+      color: rgba(255,255,255,0.55); font-size: 0.7em; font-weight: 400;
+      margin-bottom: 1.2em !important;
     }
     .team-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 1.5em;
+      gap: 12px;
+      margin-top: 1em;
       width: 100%;
     }
     .team-card {
@@ -75,15 +75,15 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 12px 16px;
-      font-size: 0.5em;
+      padding: 10px 12px;
+      font-size: 0.45em;
       backdrop-filter: blur(10px);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       cursor: pointer;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 64px;
+      min-height: 56px;
       box-sizing: border-box;
     }
     .team-card:hover {
@@ -168,19 +168,25 @@
       color: #a89fff;
     }
 
+    .blueprint-svg {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+    }
+
     /* ── STAT CARDS ── */
     .stat-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-      margin-top: 1.2em;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin-top: 0.8em;
     }
     .stat-card {
       background: var(--card-bg); border: 1px solid var(--card-border);
-      border-radius: 16px; padding: 20px 16px; text-align: center;
+      border-radius: 14px; padding: 12px 14px; text-align: center;
       backdrop-filter: blur(10px); transition: transform 0.3s;
     }
     .stat-card:hover { transform: translateY(-4px); }
     .stat-number {
-      font-size: 2.4em; font-weight: 700; line-height: 1;
+      font-size: 2em; font-weight: 700; line-height: 1;
       background: linear-gradient(135deg, #6c63ff, #a89fff);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -335,14 +341,136 @@
     .accent-line {
       width: 48px; height: 3px; border-radius: 3px;
       background: linear-gradient(90deg, #6c63ff, #a89fff);
-      margin-bottom: 1em;
+      margin-bottom: 0.8em;
     }
 
     /* Override Reveal defaults for tight layout */
-    .reveal .slides section { padding: 30px 40px; }
+    .reveal .slides section { padding: 20px 30px; }
     .reveal ul { list-style: none; padding-left: 0; }
-    .reveal ul li { padding-left: 1.4em; position: relative; color: rgba(255,255,255,0.75); font-size: 0.6em; margin-bottom: 0.6em; }
+    .reveal ul li { padding-left: 1.4em; position: relative; color: rgba(255,255,255,0.75); font-size: 0.55em; margin-bottom: 0.5em; }
     .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: #6c63ff; }
+
+    /* Sleek Custom Scrollbar for all overflow elements */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(108, 99, 255, 0.3);
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(108, 99, 255, 0.6);
+    }
+    /* Firefox */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(108, 99, 255, 0.3) rgba(255, 255, 255, 0.02);
+    }
+
+    /* Scrollable Container Wrapper */
+    .scroll-container {
+      max-height: 430px;
+      overflow-y: auto;
+      padding-right: 8px;
+      box-sizing: border-box;
+    }
+
+    /* Interactive Tab Switcher for Demo Slide */
+    .tabs-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0.2em auto 0;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    .tabs-container input[type="radio"] {
+      display: none;
+    }
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+    .tabs-nav label {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.42em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tabs-nav label:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .tabs-content {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.3);
+    }
+    .tab-pane {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .tab-pane img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    #tab-shop:checked ~ .tabs-nav label[for="tab-shop"],
+    #tab-login:checked ~ .tabs-nav label[for="tab-login"],
+    #tab-cart:checked ~ .tabs-nav label[for="tab-cart"],
+    #tab-report:checked ~ .tabs-nav label[for="tab-report"] {
+      background: rgba(108,99,255,0.2);
+      border-color: #6c63ff;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(108,99,255,0.3);
+    }
+
+    #tab-shop:checked ~ .tabs-content .shop-pane,
+    #tab-login:checked ~ .tabs-content .login-pane,
+    #tab-cart:checked ~ .tabs-content .cart-pane,
+    #tab-report:checked ~ .tabs-content .report-pane {
+      opacity: 1;
+      pointer-events: auto;
+    }
   </style>
 </head>
 <body>
@@ -603,66 +731,68 @@
     <div class="accent-line"></div>
     <h2 class="slide-title">Scenario Coverage Matrix</h2>
     
-    <table class="result-table" style="font-size: 0.4em; margin-top: 0.6em;">
-      <thead>
-        <tr>
-          <th style="width: 25%;">Component / Module</th>
-          <th style="width: 15%;">Scenarios</th>
-          <th style="width: 30%;">Positive Validations</th>
-          <th style="width: 30%;">Negative / Boundary Conditions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>🔐 Authentication</strong></td>
-          <td>6 Scenarios</td>
-          <td>Valid login, session persistence checks</td>
-          <td>Empty input, invalid credentials, post-logout access block</td>
-        </tr>
-        <tr>
-          <td><strong>🧭 Shop Navigation</strong></td>
-          <td>3 Scenarios</td>
-          <td>Men, Women, Kids navigation tabs</td>
-          <td>Direct deep link checks while unauthenticated</td>
-        </tr>
-        <tr>
-          <td><strong>🛍️ Product Catalog</strong></td>
-          <td>7 Scenarios</td>
-          <td>Product details, AJAX badge counter updates</td>
-          <td>Invalid product ID routing error validation</td>
-        </tr>
-        <tr>
-          <td><strong>🛒 Shopping Cart</strong></td>
-          <td>7 Scenarios</td>
-          <td>Multi-item additions, quantity edits, price sum calculations</td>
-          <td>Removing items, empty cart state bounds</td>
-        </tr>
-        <tr>
-          <td><strong>💳 Checkout Form</strong></td>
-          <td>3 Scenarios</td>
-          <td>Complete checkout form submissions &amp; database state sync</td>
-          <td>Empty address, missing required fields validations</td>
-        </tr>
-        <tr>
-          <td><strong>📦 Order Confirmation</strong></td>
-          <td>2 Scenarios</td>
-          <td>Verify thank-you screens &amp; unique order IDs</td>
-          <td>Accessing confirmation screens with empty cart</td>
-        </tr>
-        <tr>
-          <td><strong>🏷️ Product Filters (BDD)</strong></td>
-          <td>3 Scenarios</td>
-          <td>Single filters catalog reduction</td>
-          <td>Incompatible filter combos yielding exactly 0 results</td>
-        </tr>
-        <tr>
-          <td><strong>📡 REST API Layer</strong></td>
-          <td>9 Scenarios</td>
-          <td>Valid token auth, product catalog &amp; order API integration</td>
-          <td>Null login validation, bad request error response status</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="scroll-container" style="max-height: 420px; margin-top: 0.4em;">
+      <table class="result-table" style="font-size: 0.45em; margin: 0; width: 100%;">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Component / Module</th>
+            <th style="width: 15%;">Scenarios</th>
+            <th style="width: 30%;">Positive Validations</th>
+            <th style="width: 30%;">Negative / Boundary Conditions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🔐 Authentication</strong></td>
+            <td>6 Scenarios</td>
+            <td>Valid login, session persistence checks</td>
+            <td>Empty input, invalid credentials, post-logout access block</td>
+          </tr>
+          <tr>
+            <td><strong>🧭 Shop Navigation</strong></td>
+            <td>3 Scenarios</td>
+            <td>Men, Women, Kids navigation tabs</td>
+            <td>Direct deep link checks while unauthenticated</td>
+          </tr>
+          <tr>
+            <td><strong>🛍️ Product Catalog</strong></td>
+            <td>7 Scenarios</td>
+            <td>Product details, AJAX badge counter updates</td>
+            <td>Invalid product ID routing error validation</td>
+          </tr>
+          <tr>
+            <td><strong>🛒 Shopping Cart</strong></td>
+            <td>7 Scenarios</td>
+            <td>Multi-item additions, quantity edits, price sum calculations</td>
+            <td>Removing items, empty cart state bounds</td>
+          </tr>
+          <tr>
+            <td><strong>💳 Checkout Form</strong></td>
+            <td>3 Scenarios</td>
+            <td>Complete checkout form submissions &amp; database state sync</td>
+            <td>Empty address, missing required fields validations</td>
+          </tr>
+          <tr>
+            <td><strong>📦 Order Confirmation</strong></td>
+            <td>2 Scenarios</td>
+            <td>Verify thank-you screens &amp; unique order IDs</td>
+            <td>Accessing confirmation screens with empty cart</td>
+          </tr>
+          <tr>
+            <td><strong>🏷️ Product Filters (BDD)</strong></td>
+            <td>3 Scenarios</td>
+            <td>Single filters catalog reduction</td>
+            <td>Incompatible filter combos yielding exactly 0 results</td>
+          </tr>
+          <tr>
+            <td><strong>📡 REST API Layer</strong></td>
+            <td>9 Scenarios</td>
+            <td>Valid token auth, product catalog &amp; order API integration</td>
+            <td>Null login validation, bad request error response status</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -720,21 +850,65 @@
     <div class="accent-line"></div>
     <h2 class="slide-title">Framework Architecture</h2>
 
-    <div class="mermaid" style="margin-top: 0.8em; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 16px;">
-graph LR
-    A[🧾 Feature Files<br/>Gherkin BDD] -->|pytest-bdd| B[Step Definitions]
-    B --> C[Page Object Model]
-    C --> D[BasePage + js_click]
-    D -->|Selenium 4| E[Chrome Browser<br/>shop.qaautomationlabs.com]
+    <div style="margin-top: 0.8em; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 16px; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <!-- CUSTOM HIGH-FIDELITY ARCHITECTURE SVG DIAGRAM -->
+      <svg class="blueprint-svg" viewBox="0 0 450 280">
+        <!-- Definitions for Gradients -->
+        <defs>
+          <linearGradient id="grad-violet-ppt" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7b2ff7" />
+            <stop offset="100%" stop-color="#3b1f87" />
+          </linearGradient>
+          <linearGradient id="grad-cyan-ppt" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f2fe" />
+            <stop offset="100%" stop-color="#0072aa" />
+          </linearGradient>
+          <linearGradient id="grad-green-ppt" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00d4aa" />
+            <stop offset="100%" stop-color="#0066aa" />
+          </linearGradient>
+        </defs>
+        
+        <!-- Nodes -->
+        <!-- Gherkin -->
+        <rect x="10" y="30" width="110" height="40" rx="6" fill="url(#grad-violet-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="65" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Gherkin (.feature)</text>
+        
+        <!-- Step Defs -->
+        <rect x="150" y="30" width="110" height="40" rx="6" fill="url(#grad-violet-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="205" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Step Definitions</text>
 
-    F[🌐 API Tests] --> G[API Base Client<br/>Retry + Backoff]
-    G -->|requests| H[DummyJSON Mock API]
+        <!-- Page Objects -->
+        <rect x="290" y="30" width="110" height="40" rx="6" fill="url(#grad-violet-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="345" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Page Objects (POM)</text>
+        
+        <!-- Selenium Wrapper -->
+        <rect x="290" y="110" width="110" height="40" rx="6" fill="url(#grad-cyan-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="345" y="135" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">BasePage (WebDriver)</text>
+        
+        <!-- API Tests -->
+        <rect x="10" y="190" width="110" height="40" rx="6" fill="url(#grad-green-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="65" y="215" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">API Test Cases</text>
 
-    I[⚙️ conftest.py] --> J[Driver Fixture<br/>Headless Config]
-    I --> K[Screenshot Hook<br/>on Failure]
+        <!-- requests client -->
+        <rect x="150" y="190" width="110" height="40" rx="6" fill="url(#grad-green-ppt)" stroke="rgba(255,255,255,0.2)" />
+        <text x="205" y="215" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Resilient Session Client</text>
 
-    J --> C
-    K --> L[📊 Allure + HTML<br/>Reports]
+        <!-- Reports Box -->
+        <rect x="290" y="190" width="110" height="40" rx="6" fill="rgba(255,255,255,0.05)" stroke="#6c63ff" />
+        <text x="345" y="210" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Allure &amp; HTML</text>
+        <text x="345" y="222" fill="#ff6b6b" font-size="8" text-anchor="middle" font-family="'Space Grotesk'">+ Fail Screenshot</text>
+
+        <!-- Connective Arrows -->
+        <path d="M 120 50 L 150 50" stroke="#fff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+        <path d="M 260 50 L 290 50" stroke="#fff" stroke-width="1.5" fill="none" />
+        <path d="M 345 70 L 345 110" stroke="#7b2ff7" stroke-width="1.5" fill="none" />
+        <path d="M 120 210 L 150 210" stroke="#fff" stroke-width="1.5" fill="none" />
+        <path d="M 260 210 L 290 210" stroke="#00d4aa" stroke-width="1.5" fill="none" />
+        
+        <path d="M 290 130 H 205 V 190" stroke="#00f2fe" stroke-width="1" stroke-dasharray="3,3" fill="none" />
+        <path d="M 345 150 V 190" stroke="#fff" stroke-width="1.5" fill="none" />
+      </svg>
     </div>
   </section>
 
@@ -877,9 +1051,10 @@ graph LR
           <p><code>@positive</code>, <code>@negative</code>, <code>@filter</code> tags allow selective test execution by category.</p>
         </div>
       </div>
-      <div class="feature-card" style="height: fit-content;">
-        <h4>🏷️ Product Filter Scenarios</h4>
-        <pre style="font-size:0.8em; color: rgba(255,255,255,0.8); margin:0; line-height:1.6; white-space: pre-wrap;">
+      <div class="feature-card" style="height: 330px; display: flex; flex-direction: column; box-sizing: border-box;">
+        <h4 style="margin-bottom: 8px;">🏷️ Product Filter Scenarios</h4>
+        <div style="flex: 1; overflow-y: auto; padding-right: 6px; scrollbar-width: thin;">
+          <pre style="font-size:0.75em; color: rgba(255,255,255,0.8); margin:0; line-height:1.5; white-space: pre-wrap;">
 @positive
 Scenario: Single filter applied
   Given user is on shop page
@@ -897,6 +1072,7 @@ Scenario: Incompatible filters
   Given user is on shop page
   When they select "Footwear" + "Red"
   Then exactly 0 products shown ✓</pre>
+        </div>
       </div>
     </div>
   </section>
@@ -909,31 +1085,33 @@ Scenario: Incompatible filters
     <div class="accent-line"></div>
     <h2 class="slide-title">GitHub Actions Workflow</h2>
 
-    <div class="timeline" style="margin-top: 1em;">
-      <div class="timeline-item">
-        <div class="t-label">Trigger</div>
-        <div class="t-title">Every Push &amp; Pull Request to main</div>
-        <div class="t-desc">Automatic validation runs on every code change — no manual trigger needed.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="t-label">Setup · 15s</div>
-        <div class="t-title">Python 3.11 + Pip Cache</div>
-        <div class="t-desc">Cached <code>pip install -r requirements.txt</code> using <code>actions/setup-python@v5</code>.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="t-label">Test · ~3 min</div>
-        <div class="t-title">Headless Chrome · 40 Tests</div>
-        <div class="t-desc">Full suite runs on <code>ubuntu-latest</code> with <code>HEADLESS=true</code>. WebDriver Manager auto-downloads matching ChromeDriver.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="t-label">Artifacts</div>
-        <div class="t-title">HTML Report + Allure Results Uploaded</div>
-        <div class="t-desc">Downloadable from the Actions tab even after a passing or failing run using <code>upload-artifact@v4</code>.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="t-label">Status Check</div>
-        <div class="t-title">Green ✅ — CI Build Passed</div>
-        <div class="t-desc">Every pipeline run shows a green checkmark — ensuring 100% build stability.</div>
+    <div class="scroll-container" style="max-height: 420px; margin-top: 0.4em;">
+      <div class="timeline" style="margin-top: 0.5em; margin-bottom: 0.5em;">
+        <div class="timeline-item">
+          <div class="t-label">Trigger</div>
+          <div class="t-title">Every Push &amp; Pull Request to main</div>
+          <div class="t-desc">Automatic validation runs on every code change — no manual trigger needed.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-label">Setup · 15s</div>
+          <div class="t-title">Python 3.11 + Pip Cache</div>
+          <div class="t-desc">Cached <code>pip install -r requirements.txt</code> using <code>actions/setup-python@v5</code>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-label">Test · ~3 min</div>
+          <div class="t-title">Headless Chrome · 40 Tests</div>
+          <div class="t-desc">Full suite runs on <code>ubuntu-latest</code> with <code>HEADLESS=true</code>. WebDriver Manager auto-downloads matching ChromeDriver.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-label">Artifacts</div>
+          <div class="t-title">HTML Report + Allure Results Uploaded</div>
+          <div class="t-desc">Downloadable from the Actions tab even after a passing or failing run using <code>upload-artifact@v4</code>.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-label">Status Check</div>
+          <div class="t-title">Green ✅ — CI Build Passed</div>
+          <div class="t-desc">Every pipeline run shows a green checkmark — ensuring 100% build stability.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -946,45 +1124,88 @@ Scenario: Incompatible filters
     <div class="accent-line"></div>
     <h2 class="slide-title">Final Test Results</h2>
 
-    <table class="result-table">
-      <thead>
-        <tr>
-          <th>Module</th>
-          <th>Tests</th>
-          <th>Local</th>
-          <th>CI (GitHub Actions)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>🔐 Login / Auth</td><td>6</td><td class="passed">6 PASSED</td><td class="passed">6 PASSED ✓</td></tr>
-        <tr><td>🧭 Navigation</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
-        <tr><td>🛍️ Product</td><td>7</td><td class="passed">7 PASSED</td><td class="passed">7 PASSED ✓</td></tr>
-        <tr><td>🛒 Cart</td><td>7</td><td class="passed">7 PASSED</td><td class="passed">7 PASSED ✓</td></tr>
-        <tr><td>💳 Checkout</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
-        <tr><td>📦 Order Status</td><td>2</td><td class="passed">2 PASSED</td><td class="passed">2 PASSED ✓</td></tr>
-        <tr><td>🏷️ Product Filter (BDD)</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
-        <tr><td>🌐 API Tests</td><td>9</td><td class="xpassed">9 XPASSED</td><td class="xpassed">9 XPASSED ✓</td></tr>
-        <tr style="border-top: 1px solid rgba(108,99,255,0.5);">
-          <td><strong style="color:#fff;">TOTAL</strong></td>
-          <td><strong style="color:#fff;">40</strong></td>
-          <td class="passed"><strong>40 / 40 ✓</strong></td>
-          <td class="passed"><strong>40 / 40 ✓</strong></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="scroll-container" style="max-height: 270px; margin-top: 0.4em;">
+      <table class="result-table" style="margin: 0; width: 100%;">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Tests</th>
+            <th>Local</th>
+            <th>CI (GitHub Actions)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>🔐 Login / Auth</td><td>6</td><td class="passed">6 PASSED</td><td class="passed">6 PASSED ✓</td></tr>
+          <tr><td>🧭 Navigation</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
+          <tr><td>🛍️ Product</td><td>7</td><td class="passed">7 PASSED</td><td class="passed">7 PASSED ✓</td></tr>
+          <tr><td>🛒 Cart</td><td>7</td><td class="passed">7 PASSED</td><td class="passed">7 PASSED ✓</td></tr>
+          <tr><td>💳 Checkout</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
+          <tr><td>📦 Order Status</td><td>2</td><td class="passed">2 PASSED</td><td class="passed">2 PASSED ✓</td></tr>
+          <tr><td>🏷️ Product Filter (BDD)</td><td>3</td><td class="passed">3 PASSED</td><td class="passed">3 PASSED ✓</td></tr>
+          <tr><td>🌐 API Tests</td><td>9</td><td class="xpassed">9 XPASSED</td><td class="xpassed">9 XPASSED ✓</td></tr>
+          <tr style="border-top: 1px solid rgba(108,99,255,0.5);">
+            <td><strong style="color:#fff;">TOTAL</strong></td>
+            <td><strong style="color:#fff;">40</strong></td>
+            <td class="passed"><strong>40 / 40 ✓</strong></td>
+            <td class="passed"><strong>40 / 40 ✓</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <div style="display:flex; gap:16px; margin-top:14px; font-size:0.48em;">
-      <div style="flex:1; padding:12px; background: rgba(67,233,123,0.1); border: 1px solid rgba(67,233,123,0.3); border-radius:10px; text-align:center;">
-        <div style="color:#43e97b; font-size:2em; font-weight:700;">6:03</div>
+    <div style="display:flex; gap:16px; margin-top:10px; font-size:0.48em;">
+      <div style="flex:1; padding:8px; background: rgba(67,233,123,0.1); border: 1px solid rgba(67,233,123,0.3); border-radius:10px; text-align:center;">
+        <div style="color:#43e97b; font-size:1.8em; font-weight:700;">6:03</div>
         <div style="color:rgba(255,255,255,0.5);">Local Run Time</div>
       </div>
-      <div style="flex:1; padding:12px; background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.3); border-radius:10px; text-align:center;">
-        <div style="color:#a89fff; font-size:2em; font-weight:700;">2:42</div>
+      <div style="flex:1; padding:8px; background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.3); border-radius:10px; text-align:center;">
+        <div style="color:#a89fff; font-size:1.8em; font-weight:700;">2:42</div>
         <div style="color:rgba(255,255,255,0.5);">CI Run Time</div>
       </div>
-      <div style="flex:1; padding:12px; background: rgba(255,101,132,0.1); border: 1px solid rgba(255,101,132,0.3); border-radius:10px; text-align:center;">
-        <div style="color:#ff8fa3; font-size:2em; font-weight:700;">0%</div>
+      <div style="flex:1; padding:8px; background: rgba(255,101,132,0.1); border: 1px solid rgba(255,101,132,0.3); border-radius:10px; text-align:center;">
+        <div style="color:#ff8fa3; font-size:1.8em; font-weight:700;">0%</div>
         <div style="color:rgba(255,255,255,0.5);">Flakiness Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SLIDE 12 — DEMO SCREENSHOTS
+  ═══════════════════════════════════════════ -->
+  <section>
+    <p class="section-label"><i class="fa fa-camera"></i> &nbsp;Framework in Action</p>
+    <div class="accent-line"></div>
+    <h2 class="slide-title">Execution Demo Screenshots</h2>
+
+    <div class="tabs-container">
+      <!-- Radio inputs for tabs -->
+      <input type="radio" id="tab-shop" name="demo-tabs" checked />
+      <input type="radio" id="tab-login" name="demo-tabs" />
+      <input type="radio" id="tab-cart" name="demo-tabs" />
+      <input type="radio" id="tab-report" name="demo-tabs" />
+
+      <!-- Tab labels -->
+      <div class="tabs-nav">
+        <label for="tab-shop"><i class="fa fa-shopping-bag"></i> Shop Page</label>
+        <label for="tab-login"><i class="fa fa-sign-in-alt"></i> Login Page</label>
+        <label for="tab-cart"><i class="fa fa-shopping-cart"></i> Cart Page</label>
+        <label for="tab-report"><i class="fa fa-file-alt"></i> Test Report</label>
+      </div>
+
+      <!-- Tab contents -->
+      <div class="tabs-content">
+        <div class="tab-pane shop-pane">
+          <img src="screenshots/shop_page.png" alt="Shop Page" />
+        </div>
+        <div class="tab-pane login-pane">
+          <img src="screenshots/login_page.png" alt="Login Page" />
+        </div>
+        <div class="tab-pane cart-pane">
+          <img src="screenshots/cart_page.png" alt="Cart Page" />
+        </div>
+        <div class="tab-pane report-pane">
+          <img src="screenshots/pytest_report.png" alt="Pytest Report" />
+        </div>
       </div>
     </div>
   </section>
@@ -997,7 +1218,7 @@ Scenario: Incompatible filters
     <div class="accent-line"></div>
     <h2 class="slide-title">Key Bugs Found &amp; Fixed</h2>
 
-    <div style="margin-top: 1em;">
+    <div class="scroll-container" style="max-height: 420px; margin-top: 0.5em;">
       <div class="bug-card">
         <div class="bug-id">BUG-001 · HIGH</div>
         <div class="bug-title">Missing HTTP Timeouts Causing Pipeline Hangs</div>
@@ -1029,36 +1250,38 @@ Scenario: Incompatible filters
     <div class="accent-line"></div>
     <h2 class="slide-title">Key Takeaways</h2>
 
-    <ul class="conclusion-list">
-      <li>
-        <span class="icon">🏗️</span>
-        <div class="text-col">
-          <div class="title">Production-Grade Architecture</div>
-          <div class="desc">POM + BDD + Retry patterns mirror real-world enterprise QA frameworks used at scale.</div>
-        </div>
-      </li>
-      <li>
-        <span class="icon">🔗</span>
-        <div class="text-col">
-          <div class="title">Full Stack Coverage</div>
-          <div class="desc">Single framework covers UI browser automation, REST API testing, and CI/CD integration.</div>
-        </div>
-      </li>
-      <li>
-        <span class="icon">🚀</span>
-        <div class="text-col">
-          <div class="title">Zero Failures in CI &amp; Local</div>
-          <div class="desc">40/40 tests passing in GitHub Actions headless Chrome environment and on local Windows Chrome.</div>
-        </div>
-      </li>
-      <li>
-        <span class="icon">🤝</span>
-        <div class="text-col">
-          <div class="title">Team-Ready &amp; Maintainable</div>
-          <div class="desc">Clean separation of concerns — any team member can add new tests without touching existing logic.</div>
-        </div>
-      </li>
-    </ul>
+    <div class="scroll-container" style="max-height: 420px; margin-top: 0.5em;">
+      <ul class="conclusion-list" style="margin-top: 0;">
+        <li>
+          <span class="icon">🏗️</span>
+          <div class="text-col">
+            <div class="title">Production-Grade Architecture</div>
+            <div class="desc">POM + BDD + Retry patterns mirror real-world enterprise QA frameworks used at scale.</div>
+          </div>
+        </li>
+        <li>
+          <span class="icon">🔗</span>
+          <div class="text-col">
+            <div class="title">Full Stack Coverage</div>
+            <div class="desc">Single framework covers UI browser automation, REST API testing, and CI/CD integration.</div>
+          </div>
+        </li>
+        <li>
+          <span class="icon">🚀</span>
+          <div class="text-col">
+            <div class="title">Zero Failures in CI &amp; Local</div>
+            <div class="desc">40/40 tests passing in GitHub Actions headless Chrome environment and on local Windows Chrome.</div>
+          </div>
+        </li>
+        <li>
+          <span class="icon">🤝</span>
+          <div class="text-col">
+            <div class="title">Team-Ready &amp; Maintainable</div>
+            <div class="desc">Clean separation of concerns — any team member can add new tests without touching existing logic.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -1066,13 +1289,13 @@ Scenario: Incompatible filters
   ═══════════════════════════════════════════ -->
   <section>
     <div class="outro">
-      <div class="big-check">✅</div>
-      <h1 class="outro-title">All 40 Tests Passing</h1>
-      <p style="color: rgba(255,255,255,0.5); font-size: 0.65em; margin-top: 0.5em;">
+      <div class="big-check" style="font-size: 3.5em; margin-bottom: 0.1em;">✅</div>
+      <h1 class="outro-title" style="font-size: 1.8em !important;">All 40 Tests Passing</h1>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.6em; margin-top: 0.3em;">
         Local Execution · Headless CI · GitHub Actions Workflow · 100% Stability
       </p>
 
-      <div class="stat-grid" style="grid-template-columns: repeat(3,1fr); max-width: 600px; margin: 2em auto 0;">
+      <div class="stat-grid" style="grid-template-columns: repeat(3,1fr); max-width: 600px; margin: 1.2em auto 0;">
         <div class="stat-card">
           <div class="stat-number green">40</div>
           <div class="stat-label">Tests</div>
@@ -1087,7 +1310,7 @@ Scenario: Incompatible filters
         </div>
       </div>
 
-      <p style="color: rgba(255,255,255,0.3); font-size: 0.4em; margin-top: 3em; letter-spacing: 0.1em; text-transform: uppercase;">
+      <p style="color: rgba(255,255,255,0.3); font-size: 0.4em; margin-top: 2em; letter-spacing: 0.1em; text-transform: uppercase;">
         BUG-Busters · E2E Test Automation Framework · 2026
       </p>
     </div>

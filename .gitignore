@@ -8,6 +8,9 @@ allure-report/
 logs/
 screenshots/*
 !screenshots/pytest_report.png
+!screenshots/shop_page.png
+!screenshots/login_page.png
+!screenshots/cart_page.png
 !screenshots/.gitkeep
 #reports
 reports/
