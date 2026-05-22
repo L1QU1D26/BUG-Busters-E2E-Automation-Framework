@@ -13,14 +13,7 @@ class CartPage(BasePage):
 
     def cart_click(self, locator):
 
-        element = self.driver.find_element(*locator)
-
-        self.driver.execute_script(
-            "arguments[0].scrollIntoView(true);",
-            element
-        )
-
-        element.click()
+        self.js_click(locator)
         
     # Methods
 
