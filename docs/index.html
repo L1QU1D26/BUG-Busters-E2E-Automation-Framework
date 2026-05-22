@@ -972,6 +972,37 @@
         border-bottom: none;
       }
     }
+
+    /* Prevent clipping on screens with small heights */
+    @media (max-height: 820px) {
+      section {
+        padding-top: 80px !important;
+        padding-bottom: 50px !important;
+      }
+      .scroll-indicator {
+        bottom: 12px !important;
+      }
+      .hero-h1 {
+        margin-bottom: 8px !important;
+      }
+      .hero-desc {
+        margin-bottom: 16px !important;
+      }
+      .stats-container {
+        margin-bottom: 16px !important;
+      }
+      .stat-box {
+        padding: 10px 15px !important;
+      }
+      .team-section {
+        margin-top: 15px !important;
+        gap: 10px !important;
+      }
+      .team-mini-card {
+        min-height: 56px !important;
+        padding: 8px 12px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1108,14 +1139,13 @@
         </div>
         <div class="team-mini-card">
           <div class="t-name">Anand Srivastava</div>
-          <div class="t-role">Authentication Module</div>
+          <div class="t-role">Pytest-BDD Integration</div>
           <div class="t-details">
             <div class="t-details-title">Key Contributions</div>
             <ul class="t-details-list">
-              <li>Login workflows &amp; tests</li>
-              <li>Registration workflows</li>
-              <li>Logout verification</li>
-              <li>Session state validations</li>
+              <li>Gherkin feature files</li>
+              <li>Step definition mappings</li>
+              <li>Behavior Driven tests</li>
             </ul>
           </div>
         </div>
@@ -1171,13 +1201,14 @@
         </div>
         <div class="team-mini-card">
           <div class="t-name">Sidharth</div>
-          <div class="t-role">Pytest-BDD Integration</div>
+          <div class="t-role">Authentication Module</div>
           <div class="t-details">
             <div class="t-details-title">Key Contributions</div>
             <ul class="t-details-list">
-              <li>Gherkin feature files</li>
-              <li>Step definition mappings</li>
-              <li>Behavior Driven tests</li>
+              <li>Login workflows &amp; tests</li>
+              <li>Registration workflows</li>
+              <li>Logout verification</li>
+              <li>Session state validations</li>
             </ul>
           </div>
         </div>
