@@ -24,6 +24,8 @@ def login_and_open_cart(driver):
         "demo"
     )
 
+    assert login.is_dashboard_displayed()
+
     cart_page = CartPage(driver)
 
     return cart_page
