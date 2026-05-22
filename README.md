@@ -110,7 +110,9 @@ BUG-Busters-E2E-Automation-Framework/
 ├── pytest.ini              # Pytest settings and marker registrations
 ├── requirements.txt        # Python package dependencies
 ├── defect_log.md           # Defect log documenting found bugs and RCAs
-└── capstone_presentation.md# Capstone PPT presentation outline
+├── capstone_presentation.md# Capstone PPT presentation outline
+└── utils/                  # Helper utilities and scripts
+    └── capture_report_screenshot.py # Automated report screenshot capture utility
 ```
 
 ---
@@ -187,6 +189,14 @@ The framework outputs detailed logs, standard HTML files, and rich Allure report
 
 ### Pytest-HTML Report
 A local, static HTML report is generated automatically inside `reports/report.html` on every test run. Open it in any browser to inspect the test run summary.
+
+#### Capturing Report Screenshots
+To automatically capture a high-resolution screenshot of your HTML test report for submission or documentation, execute:
+```bash
+python utils/capture_report_screenshot.py
+```
+This launches a headless Chrome browser, renders the report, and saves it to:
+`screenshots/pytest_report.png`
 
 ---
 

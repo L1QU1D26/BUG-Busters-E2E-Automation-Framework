@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUG-Busters | E2E Test Automation Portfolio & PPT</title>
+  <meta name="description" content="A premium, scroll-snapping storytelling landing page and presentation deck for the BUG-Busters End-to-End Test Automation Framework." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ══════════════════════ CORE STYLES & RESET ══════════════════════ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #030308;
+      --bg-card: rgba(13, 13, 29, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(108, 99, 255, 0.25);
+      --text: #e2e2ec;
+      --text-muted: rgba(226, 226, 236, 0.55);
+      --accent-violet: #7b2ff7;
+      --accent-cyan: #00f2fe;
+      --accent-coral: #fc2851;
+      --accent-amber: #ffb400;
+      --accent-green: #00d4aa;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    body {
+      font-family: var(--font-heading);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hide default scrollbar but keep scroll functionality */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-glow);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-violet);
+    }
+
+    /* ══════════════════════ BACKGROUND GLOWS ══════════════════════ */
+    .bg-orbs {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.12;
+      pointer-events: none;
+      animation: floatOrbit 20s infinite ease-in-out;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: var(--accent-violet);
+      top: -200px; left: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: var(--accent-cyan);
+      bottom: -150px; right: -100px;
+      animation-delay: 5s;
+    }
+    .orb-3 {
+      width: 400px; height: 400px;
+      background: var(--accent-coral);
+      top: 30%; left: 60%;
+      animation-delay: 10s;
+    }
+    @keyframes floatOrbit {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.08); }
+      66% { transform: translate(-20px, 30px) scale(0.95); }
+    }
+
+    /* ══════════════════════ NAVIGATION PANEL ══════════════════════ */
+    /* Horizontal Navbar */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(3, 3, 8, 0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-actions a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-actions a:hover {
+      color: #fff;
+    }
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .github-btn:hover {
+      background: var(--accent-violet);
+      border-color: var(--accent-violet);
+      box-shadow: 0 4px 15px rgba(123, 47, 247, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Floating Navigation Dots */
+    .dots-nav {
+      position: fixed;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .dot-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .dot-link {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      opacity: 0.4;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .dot-link:hover {
+      opacity: 1;
+      transform: scale(1.3);
+      background: var(--accent-cyan);
+    }
+    .dot-item.active .dot-link {
+      opacity: 1;
+      transform: scale(1.6);
+      background: var(--accent-violet);
+      box-shadow: 0 0 10px var(--accent-violet);
+    }
+    .dot-tooltip {
+      position: absolute;
+      right: 22px;
+      background: rgba(3, 3, 8, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 4px 10px;
+      color: #fff;
+      font-size: 0.72rem;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.25s ease;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .dot-item:hover .dot-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ══════════════════════ SCROLL-SNAP SLIDES ══════════════════════ */
+    section {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 8% 60px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Smooth inner content entry transitions */
+    .slide-content {
+      width: 100%;
+      max-width: 1200px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    section.active .slide-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide Header Formatting */
+    .slide-header {
+      margin-bottom: 25px;
+    }
+    .section-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 16px; height: 1px;
+      background: var(--accent-cyan);
+    }
+    .slide-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .slide-title .grad-text {
+      background: linear-gradient(135deg, #fff, var(--text-muted));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ══════════════════════ GLASS CARDS & CORE LAYOUT ELEMENTS ══════════════════════ */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      backdrop-filter: blur(16px) saturate(120%);
+      transition: all 0.3s;
+    }
+    .glass-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    .glow-border {
+      position: relative;
+    }
+    .glow-border::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan)) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      opacity: 0.35;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .glow-border:hover::after {
+      opacity: 0.85;
+    }
+
+    /* Badges */
+    .p-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .p-badge-purple { background: rgba(123, 47, 247, 0.15); border: 1px solid var(--accent-violet); color: #c4c0ff; }
+    .p-badge-cyan { background: rgba(0, 242, 254, 0.1); border: 1px solid var(--accent-cyan); color: #a4faff; }
+    .p-badge-green { background: rgba(0, 212, 170, 0.15); border: 1px solid var(--accent-green); color: #a5ffd6; }
+    .p-badge-coral { background: rgba(252, 40, 81, 0.15); border: 1px solid var(--accent-coral); color: #ffacbe; }
+
+    /* Section Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      z-index: 5;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
+    .scroll-mouse {
+      width: 14px; height: 24px;
+      border: 1.5px solid var(--text-muted);
+      border-radius: 8px;
+      position: relative;
+    }
+    .scroll-wheel {
+      width: 2px; height: 5px;
+      background: var(--text-muted);
+      border-radius: 1px;
+      position: absolute;
+      top: 4px; left: 50%;
+      transform: translateX(-50%);
+      animation: wheelMove 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -6px); }
+      60% { transform: translate(-50%, -3px); }
+    }
+    @keyframes wheelMove {
+      0% { opacity: 1; top: 3px; }
+      100% { opacity: 0; top: 12px; }
+    }
+
+    /* ══════════════════════ CODE BLOCK STYLE ══════════════════════ */
+    .code-box {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      background: rgba(3, 3, 8, 0.6) !important;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      overflow-x: auto;
+      color: #72f1b8;
+      line-height: 1.5;
+      position: relative;
+    }
+    .code-box::before {
+      content: 'PYTHON';
+      position: absolute;
+      top: 8px; right: 12px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+    .code-box.gherkin::before { content: 'GHERKIN'; }
+    .code-box.terminal::before { content: 'BASH'; }
+    .code-box span.keyword { color: #f92672; }
+    .code-box span.func { color: #66d9ef; }
+    .code-box span.str { color: #e6db74; }
+    .code-box span.comment { color: #75715e; font-style: italic; }
+
+    /* ══════════════════════ SLIDE SPECIFIC LAYOUTS ══════════════════════ */
+
+    /* Slide 1: Hero */
+    .hero-h1 {
+      font-size: clamp(2.5rem, 6vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+    .gradient-title {
+      background: linear-gradient(135deg, #fff 20%, #a89fff 60%, var(--accent-violet) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+    .stats-container {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      overflow: hidden;
+      max-width: 750px;
+      margin-bottom: 30px;
+    }
+    .stat-box {
+      flex: 1;
+      padding: 16px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-box:last-child {
+      border-right: none;
+    }
+    .stat-val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .stat-lbl {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+    .team-section {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .team-mini-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      min-width: 180px;
+    }
+    .team-mini-card .t-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .team-mini-card .t-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Slide 2: Strategy */
+    .hypothesis-card {
+      background: rgba(123, 47, 247, 0.04);
+      border-left: 3px solid var(--accent-violet);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-top: 14px;
+    }
+    .hypothesis-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #a89fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .hypothesis-text {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    /* Slide 3: Scenario Matrix */
+    .table-wrap {
+      max-height: 380px;
+      overflow-y: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      text-align: left;
+    }
+    thead {
+      background: rgba(108, 99, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    th {
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+      color: #fff;
+    }
+
+    /* Slide 4: Architecture BluePrint (SVG styling) */
+    .blueprint-svg {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+    }
+    .file-tree {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .file-tree .dir { color: #a89fff; font-weight: 500; }
+    .file-tree .file { color: #fff; }
+
+    /* Slide 8: CI/CD Pipeline Steps */
+    .ci-steps {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+    .ci-step-box {
+      flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      width: 140px;
+      text-align: center;
+      position: relative;
+    }
+    .ci-step-box.active {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+    }
+    .ci-step-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .ci-step-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .ci-step-time {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .ci-arrow {
+      color: var(--accent-violet);
+      font-size: 1rem;
+      opacity: 0.6;
+    }
+
+    /* Slide 10: Defects Log */
+    .badge-sev {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+    .sev-critical { background: rgba(252, 40, 81, 0.2); color: var(--accent-coral); border: 1.5px solid var(--accent-coral); }
+    .sev-major { background: rgba(255, 180, 0, 0.2); color: var(--accent-amber); border: 1.5px solid var(--accent-amber); }
+    .sev-medium { background: rgba(123, 47, 247, 0.2); color: #c4c0ff; border: 1.5px solid var(--accent-violet); }
+    .sev-low { background: rgba(0, 212, 170, 0.2); color: var(--accent-green); border: 1.5px solid var(--accent-green); }
+
+    /* Slide 11: Interactive Q&A */
+    .qa-controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .search-input {
+      flex: 1;
+      background: rgba(3, 3, 8, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent-violet);
+      box-shadow: 0 0 10px rgba(123, 47, 247, 0.25);
+    }
+    .qa-list {
+      max-height: 280px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-right: 5px;
+    }
+    .qa-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.01);
+      transition: all 0.2s;
+    }
+    .qa-question-bar {
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+    .qa-question-bar:hover {
+      background: rgba(255, 255, 255, 0.02);
+      color: #fff;
+    }
+    .qa-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .qa-answer-inner {
+      padding: 14px 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+    .qa-item.expanded {
+      border-color: var(--accent-violet);
+      background: rgba(123, 47, 247, 0.02);
+    }
+    .qa-item.expanded .qa-answer {
+      max-height: 200px;
+    }
+    .qa-item .chevron {
+      transition: transform 0.3s;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .qa-item.expanded .chevron {
+      transform: rotate(180deg);
+      color: var(--accent-cyan);
+    }
+
+    /* Submit Question Form */
+    .question-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .question-form input, .question-form textarea {
+      background: rgba(3, 3, 8, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.82rem;
+    }
+    .question-form textarea {
+      resize: none;
+      height: 80px;
+    }
+    .question-form input:focus, .question-form textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+    .submit-btn {
+      background: linear-gradient(135deg, var(--accent-violet), var(--accent-cyan));
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .submit-btn:hover {
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+      opacity: 0.95;
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #0d1f1c;
+      border: 1.5px solid var(--accent-green);
+      border-radius: 8px;
+      padding: 12px 20px;
+      color: #a5ffd6;
+      font-size: 0.82rem;
+      font-weight: 500;
+      z-index: 200;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide 12: Project Timeline & Takeaways */
+    .timeline-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .timeline-row {
+      display: flex;
+      gap: 15px;
+      position: relative;
+    }
+    .timeline-row::before {
+      content: '';
+      position: absolute;
+      top: 25px; bottom: -20px; left: 16px;
+      width: 1px;
+      background: var(--border);
+    }
+    .timeline-row:last-child::before {
+      display: none;
+    }
+    .timeline-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(108, 99, 255, 0.15);
+      border: 1px solid var(--accent-violet);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .timeline-info {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+    }
+    .timeline-info h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .timeline-info p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Custom scroll helper links inside sections */
+    .jump-link {
+      color: var(--accent-cyan);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ══════════════════════ RESPONSIVE STYLES ══════════════════════ */
+    @media (max-width: 950px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      section {
+        height: auto;
+        min-height: 100vh;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+        padding: 90px 4% 50px;
+      }
+      html {
+        scroll-snap-type: none;
+      }
+      .scroll-indicator {
+        display: none;
+      }
+      .dots-nav {
+        display: none; /* Hide floating dots on tablets/mobiles */
+      }
+      .table-wrap {
+        max-height: 250px;
+      }
+      .stats-container {
+        flex-direction: column;
+      }
+      .stat-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .stat-box:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND RADIAL ORBS -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#hero" class="brand">
+      <div class="brand-logo">🐞</div>
+      <span>BUG-Busters</span>
+    </a>
+    <div class="nav-actions">
+      <a href="#hero">Overview</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#defects">Defects</a>
+      <a href="#qa">Q&A</a>
+      <a href="https://github.com/L1QU1D26/BUG-Busters-E2E-Automation-Framework" target="_blank" class="github-btn">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- FLOATING DOTS NAVIGATION -->
+  <div class="dots-nav">
+    <div class="dot-item active" data-index="0">
+      <div class="dot-tooltip">Welcome &amp; Team</div>
+      <a href="#hero" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="1">
+      <div class="dot-tooltip">Testing Strategy</div>
+      <a href="#strategy" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="2">
+      <div class="dot-tooltip">Scenario Matrix &amp; Flow</div>
+      <a href="#scenarios" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="3">
+      <div class="dot-tooltip">Framework Architecture</div>
+      <a href="#architecture" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="4">
+      <div class="dot-tooltip">UI Sync &amp; Waits</div>
+      <a href="#selenium" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="5">
+      <div class="dot-tooltip">BDD Specifications</div>
+      <a href="#bdd" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="6">
+      <div class="dot-tooltip">API Robustness</div>
+      <a href="#api" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="7">
+      <div class="dot-tooltip">CI/CD Pipeline</div>
+      <a href="#cicd" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="8">
+      <div class="dot-tooltip">Reports &amp; Hooks</div>
+      <a href="#reporting" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="9">
+      <div class="dot-tooltip">Logged Defects</div>
+      <a href="#defects" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="10">
+      <div class="dot-tooltip">Q&amp;A Session</div>
+      <a href="#qa" class="dot-link"></a>
+    </div>
+    <div class="dot-item" data-index="11">
+      <div class="dot-tooltip">Milestones &amp; Roadmap</div>
+      <a href="#pm" class="dot-link"></a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════ SLIDE 1: HERO & TEAM ══════════════════════ -->
+  <section id="hero" class="active">
+    <div class="slide-content">
+      <div style="margin-bottom: 15px;">
+        <span class="p-badge p-badge-purple" style="font-weight:700;"><i class="fa fa-award"></i> Wipro Capstone</span>
+        <span class="p-badge p-badge-green"><i class="fa fa-check-circle"></i> 40/40 Tests Passing</span>
+        <span class="p-badge p-badge-cyan"><i class="fa fa-bolt"></i> CI Live</span>
+      </div>
+      <h1 class="hero-h1">
+        <span class="gradient-title">E2E Test Automation</span><br/>
+        <span style="color: var(--accent-cyan);">Framework Portfolio</span>
+      </h1>
+      <p class="hero-desc">
+        A unified UI, API, and BDD verification suite targeting complex e-commerce cart behaviors, product filtering, and order placements. Designed with Page Object Models, explicit synchronization, and self-healing API requests.
+      </p>
+
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-val gradient-title" data-target="40">0</div>
+          <div class="stat-lbl">Total Tests</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: var(--accent-green);" data-target="31">0</div>
+          <div class="stat-lbl">UI Passed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: var(--accent-cyan);" data-target="9">0</div>
+          <div class="stat-lbl">API XPassed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: var(--accent-coral);" data-target="0">0%</div>
+          <div class="stat-lbl">Flakiness</div>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <div class="team-mini-card">
+          <div class="t-name">Subham Sudeepta</div>
+          <div class="t-role">Framework Architect</div>
+        </div>
+        <div class="team-mini-card">
+          <div class="t-name">Sandeep Sai Samudrala</div>
+          <div class="t-role">UI Automation &amp; Cart Lead</div>
+        </div>
+        <div class="team-mini-card">
+          <div class="t-name">Raghuram</div>
+          <div class="t-role">API Resiliency &amp; BDD Lead</div>
+        </div>
+      </div>
+    </div>
+    <a href="#strategy" class="scroll-indicator">
+      <span>QA Automation Strategy</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 2: STRATEGY ══════════════════════ -->
+  <section id="strategy">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Strategic Quality Assurance</div>
+        <h2 class="slide-title">Problem Definition &amp; Test Strategy</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card glow-border" style="height: 100%;">
+          <h3 style="color:#fff; margin-bottom:10px; font-size:1.1rem;"><i class="fa fa-exclamation-triangle" style="color:var(--accent-coral);"></i> Problem Definition</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px; line-height:1.7;">
+            Modern e-commerce platform checkouts involve multi-layered, asynchronous workflows. State transformations in cart badge totals and filter overlays are highly vulnerable to regressions. Traditional testing methodologies suffer from asynchronous race conditions, lacks API-level stability checks, and offers zero pipeline feedback hooks.
+          </p>
+          <h3 style="color:#fff; margin-bottom:8px; font-size:1.1rem;"><i class="fa fa-crosshairs" style="color:var(--accent-cyan);"></i> Scope &amp; Target</h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.7;">
+            Unified validation of both UI and API layers in synchronization: 7 UI modules covering the complete customer journey, 1 BDD filtering framework, and 9 REST API integration test endpoints executed in parallel under headless GitHub Actions.
+          </p>
+        </div>
+        <div>
+          <div class="glass-card" style="margin-bottom:15px;">
+            <h3 style="color:#fff; margin-bottom:10px; font-size:1.1rem;"><i class="fa fa-lightbulb" style="color:var(--accent-green);"></i> Testing Gaps Resolved</h3>
+            <ul style="list-style:none; font-size:0.82rem; color:var(--text-muted); line-height:1.7;">
+              <li><i class="fa fa-check" style="color:var(--accent-green);"></i> <strong>Headless Dropdowns:</strong> Resolved hover exclusions in Headless Chrome using JS fallback executors.</li>
+              <li><i class="fa fa-check" style="color:var(--accent-green);"></i> <strong>API Unpredictability:</strong> Shielded against mock instability using URL Session retries and backoff limits.</li>
+            </ul>
+          </div>
+          <div class="hypothesis-card">
+            <div class="hypothesis-title">Testing Hypothesis Framework</div>
+            <div class="hypothesis-text">
+              <strong>Null ($H_0$):</strong> BDD-POM patterns and retry hooks fail to yield <5% flakiness and 100% execution pass rate.<br/>
+              <strong>Alternate ($H_a$):</strong> Explicit synchronization and HTTP adapters maintain 100% stability, proving headless and API resilient strategy works.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#scenarios" class="scroll-indicator">
+      <span>Scenario Coverage Matrix &amp; Journey</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 3: SCENARIO MATRIX ══════════════════════ -->
+  <section id="scenarios">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Scenario Coverage &amp; E2E Workflow</div>
+        <h2 class="slide-title">Test Design &amp; Scenario Coverage Matrix</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card glow-border" style="padding: 20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h3 style="font-size:0.95rem; color:#fff;">Coverage Grid: 40 Automated Scenarios</h3>
+            <span class="p-badge p-badge-cyan" style="font-size: 0.65rem;">Positive &amp; Negative Designs</span>
+          </div>
+          <div class="table-wrap" style="max-height: 300px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component / Module</th>
+                  <th>Test Scenarios (Total)</th>
+                  <th>Positive Validations</th>
+                  <th>Negative / Boundary Conditions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>🔐 Authentication</strong></td>
+                  <td>6 Scenarios</td>
+                  <td>Valid login, persistence checks</td>
+                  <td>Empty username, invalid credentials, post-logout block</td>
+                </tr>
+                <tr>
+                  <td><strong>🧭 Shop Navigation</strong></td>
+                  <td>3 Scenarios</td>
+                  <td>Men, Women, Kids navigation tabs</td>
+                  <td>Direct deep link checks while unauthenticated</td>
+                </tr>
+                <tr>
+                  <td><strong>🛍️ Product Catalog</strong></td>
+                  <td>7 Scenarios</td>
+                  <td>Product details, badge increments</td>
+                  <td>Invalid product ID routing errors</td>
+                </tr>
+                <tr>
+                  <td><strong>🛒 Shopping Cart</strong></td>
+                  <td>7 Scenarios</td>
+                  <td>Multi-item additions, quantity edits, sums</td>
+                  <td>Removing items, empty cart bounds</td>
+                </tr>
+                <tr>
+                  <td><strong>💳 Checkout Form</strong></td>
+                  <td>3 Scenarios</td>
+                  <td>Complete form submissions</td>
+                  <td>Empty address, missing required fields</td>
+                </tr>
+                <tr>
+                  <td><strong>📦 Order Confirmation</strong></td>
+                  <td>2 Scenarios</td>
+                  <td>Verify thank-you screens &amp; order IDs</td>
+                  <td>Accessing confirm screens with empty cart</td>
+                </tr>
+                <tr>
+                  <td><strong>🏷️ Product Filters (BDD)</strong></td>
+                  <td>3 Scenarios</td>
+                  <td>Single filters catalog reduction</td>
+                  <td>Incompatible filter combos yielding 0 results</td>
+                </tr>
+                <tr>
+                  <td><strong>📡 REST API Layer</strong></td>
+                  <td>9 Scenarios</td>
+                  <td>Valid auth token, product/order API</td>
+                  <td>Null login validation, status error handling</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="glass-card" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+          <h3 style="color:#fff; margin-bottom:12px; font-size:0.95rem;"><i class="fa fa-route" style="color:var(--accent-cyan);"></i> E2E E-Commerce User Journey Workflow</h3>
+          <div style="display:flex; flex-direction:column; gap:10px; font-size:0.8rem; line-height: 1.45; color: var(--text-muted);">
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">1</span>
+              <div><strong style="color:#fff;">Authentication:</strong> Dynamic user login and session authentication via <code>LoginPage</code>.</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">2</span>
+              <div><strong style="color:#fff;">Catalog Navigation:</strong> Navigates categories &amp; applies BDD filters (Formal, Footwear, Color).</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">3</span>
+              <div><strong style="color:#fff;">Cart Additions:</strong> Selects products &amp; clicks add-to-cart, verifying AJAX badge count updates.</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">4</span>
+              <div><strong style="color:#fff;">Cart Optimization:</strong> Updates quantities &amp; validates dynamic total price calculations.</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">5</span>
+              <div><strong style="color:#fff;">Checkout Validation:</strong> Populates billing details form, checking for empty address bounds.</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-violet); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">6</span>
+              <div><strong style="color:#fff;">Order Confirmation:</strong> Submits order, capturing receipt ID &amp; verifying confirmation panels.</div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start;">
+              <span style="width:18px; height:18px; border-radius:50%; background:var(--accent-green); display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; color:#fff; flex-shrink:0; margin-top:2px;">7</span>
+              <div><strong style="color:#fff;">API State Audit:</strong> Parallels the same flow by verifying authentication and order checkout via API.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#architecture" class="scroll-indicator">
+      <span>Framework Architecture</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 4: ARCHITECTURE ══════════════════════ -->
+  <section id="architecture">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Framework Design &amp; Directory Layout</div>
+        <h2 class="slide-title">Framework Design &amp; Architecture Blueprint</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card" style="height: 100%;">
+          <h3 style="color:#fff; margin-bottom:12px; font-size:1.05rem;"><i class="fa fa-folder-open" style="color:var(--accent-violet);"></i> Codebase Directory Layout</h3>
+          <div class="file-tree">
+            <div>BUG-Busters-E2E-Automation-Framework/</div>
+            <div>├── <span class="dir">.github/workflows/</span> <span class="file">ci.yml</span> <span class="comment"># Headless CI script</span></div>
+            <div>├── <span class="dir">api/</span></div>
+            <div>│   ├── <span class="dir">Base/</span> <span class="file">api_client.py</span> <span class="comment"># Session &amp; urllib3 Retry Strategy</span></div>
+            <div>│   └── <span class="dir">endpoints/</span> <span class="file">cart.py, order.py, auth.py</span></div>
+            <div>├── <span class="dir">features/</span> <span class="file">product_filter.feature</span> <span class="comment"># Gherkin scenario scripts</span></div>
+            <div>├── <span class="dir">locators/</span> <span class="file">authentication.py, product_locators.py</span></div>
+            <div>├── <span class="dir">pages/</span> <span class="file">base_page.py, product_page.py</span> <span class="comment"># POM wrapper patterns</span></div>
+            <div>├── <span class="dir">step_definitions/</span> <span class="file">test_product_filter.py</span> <span class="comment"># BDD step mappings</span></div>
+            <div>├── <span class="dir">tests/</span> <span class="file">conftest.py</span> <span class="comment"># Driver fixtures &amp; makereport hooks</span></div>
+            <div>└── <span class="file">pytest.ini, requirements.txt, defect_log.md</span></div>
+          </div>
+        </div>
+
+        <div class="glass-card glow-border" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px;">
+          <h3 style="color:#fff; margin-bottom:12px; font-size:1.05rem; width:100%; text-align:left;"><i class="fa fa-project-diagram" style="color:var(--accent-cyan);"></i> Unified Execution Flow Blueprint</h3>
+          
+          <!-- CUSTOM HIGH-FIDELITY ARCHITECTURE SVG DIAGRAM -->
+          <svg class="blueprint-svg" viewBox="0 0 450 280">
+            <!-- Definitions for Gradients -->
+            <defs>
+              <linearGradient id="grad-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7b2ff7" />
+                <stop offset="100%" stop-color="#3b1f87" />
+              </linearGradient>
+              <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe" />
+                <stop offset="100%" stop-color="#0072aa" />
+              </linearGradient>
+              <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4aa" />
+                <stop offset="100%" stop-color="#0066aa" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Nodes -->
+            <!-- Gherkin -->
+            <rect x="10" y="30" width="110" height="40" rx="6" fill="url(#grad-violet)" stroke="rgba(255,255,255,0.2)" />
+            <text x="65" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Gherkin (.feature)</text>
+            
+            <!-- Step Defs -->
+            <rect x="150" y="30" width="110" height="40" rx="6" fill="url(#grad-violet)" stroke="rgba(255,255,255,0.2)" />
+            <text x="205" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Step Definitions</text>
+
+            <!-- Page Objects -->
+            <rect x="290" y="30" width="110" height="40" rx="6" fill="url(#grad-violet)" stroke="rgba(255,255,255,0.2)" />
+            <text x="345" y="55" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Page Objects (POM)</text>
+            
+            <!-- Selenium Wrapper -->
+            <rect x="290" y="110" width="110" height="40" rx="6" fill="url(#grad-cyan)" stroke="rgba(255,255,255,0.2)" />
+            <text x="345" y="135" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">BasePage (WebDriver)</text>
+            
+            <!-- API Tests -->
+            <rect x="10" y="190" width="110" height="40" rx="6" fill="url(#grad-green)" stroke="rgba(255,255,255,0.2)" />
+            <text x="65" y="215" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">API Test Cases</text>
+
+            <!-- requests client -->
+            <rect x="150" y="190" width="110" height="40" rx="6" fill="url(#grad-green)" stroke="rgba(255,255,255,0.2)" />
+            <text x="205" y="215" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Resilient Session Client</text>
+
+            <!-- Reports Box -->
+            <rect x="290" y="190" width="110" height="40" rx="6" fill="rgba(255,255,255,0.05)" stroke="var(--border-glow)" />
+            <text x="345" y="210" fill="#fff" font-size="9" text-anchor="middle" font-family="'Space Grotesk'">Allure &amp; HTML</text>
+            <text x="345" y="222" fill="var(--accent-coral)" font-size="8" text-anchor="middle" font-family="'Space Grotesk'">+ Fail Screenshot</text>
+
+            <!-- Connective Arrows -->
+            <path d="M 120 50 L 150 50" stroke="#fff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+            <path d="M 260 50 L 290 50" stroke="#fff" stroke-width="1.5" fill="none" />
+            <path d="M 345 70 L 345 110" stroke="#7b2ff7" stroke-width="1.5" fill="none" />
+            <path d="M 120 210 L 150 210" stroke="#fff" stroke-width="1.5" fill="none" />
+            <path d="M 260 210 L 290 210" stroke="#00d4aa" stroke-width="1.5" fill="none" />
+            
+            <path d="M 290 130 H 205 V 190" stroke="#00f2fe" stroke-width="1" stroke-dasharray="3,3" fill="none" />
+            <path d="M 345 150 V 190" stroke="#fff" stroke-width="1.5" fill="none" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <a href="#selenium" class="scroll-indicator">
+      <span>Selenium Sync &amp; Waits</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 5: SELENIUM AUTOMATION ══════════════════════ -->
+  <section id="selenium">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Synchronization &amp; UI Logic</div>
+        <h2 class="slide-title">Selenium WebDriver &amp; Dynamic Synchronization</h2>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="glass-card" style="margin-bottom:15px;">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-hourglass-half" style="color:var(--accent-coral);"></i> Explicit Wait Wrapper Strategy</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75; margin-bottom:10px;">
+              By implementing <code>WebDriverWait</code> wrapping conditions, we eliminated 100% of hardcoded sleeps (<code>time.sleep</code>) during locator checks. Elements are polled dynamically with a 10s maximum timeout limit.
+            </p>
+            <pre class="code-box">
+<span class="keyword">def</span> <span class="func">click</span>(self, locator):
+    self.wait.until(
+        EC.element_to_be_clickable(locator)
+    ).click()</pre>
+          </div>
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-desktop" style="color:var(--accent-cyan);"></i> Responsive Windows Scaling &amp; Context</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75;">
+              In headed mode, window maximizes cleanly. For headless CI/CD operations, conftest loads <code>--window-size=1920,1080</code> explicitly to prevent layout elements collapsing and throwing click anomalies.
+            </p>
+          </div>
+        </div>
+        <div class="glass-card glow-border" style="height:100%;">
+          <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-magic" style="color:var(--accent-green);"></i> Headless Fallback: Javascript Exec Clicks</h3>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75; margin-bottom:12px;">
+            ActionChains hover clicks fail under headless environments because layout viewports do not render visual dropdown trigger bounds. To prevent <code>ElementNotInteractableException</code>, we implemented <code>js_click()</code> inside our BasePage:
+          </p>
+          <pre class="code-box" style="margin-bottom:12px;">
+<span class="keyword">def</span> <span class="func">js_click</span>(self, locator):
+    <span class="comment"># presence_of_element ignores visibility filters</span>
+    element = self.wait.until(
+        EC.presence_of_element_located(locator)
+    )
+    self.driver.execute_script(
+        <span class="str">"arguments[0].click();"</span>, element
+    )</pre>
+          <p style="font-size:0.8rem; color:var(--accent-cyan); font-weight:500;">
+            <i class="fa fa-info-circle"></i> Bypasses overlay layers and clicks direct DOM references.
+          </p>
+        </div>
+      </div>
+    </div>
+    <a href="#bdd" class="scroll-indicator">
+      <span>BDD Specifications</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 6: BDD GHERKIN ══════════════════════ -->
+  <section id="bdd">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Behavior Driven Development</div>
+        <h2 class="slide-title">BDD Feature Files &amp; Step Definition Reuse</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card glow-border" style="height:100%;">
+          <span class="p-badge p-badge-purple" style="margin-bottom:10px;">Gherkin Feature Specification</span>
+          <pre class="code-box gherkin" style="height: 300px; font-size: 0.73rem;">
+<span class="keyword">Feature:</span> Product Filtering Functionality
+
+  <span class="keyword">Background:</span>
+    <span class="keyword">Given</span> the user is logged into the application and on shop page
+    <span class="keyword">And</span> the user navigates to the Men's Wear category page
+
+  <span class="keyword">@filter @positive</span>
+  <span class="keyword">Scenario:</span> Apply single category filter
+    <span class="keyword">Given</span> the user notes the initial product count
+    <span class="keyword">When</span> the user selects the "Formal" filter checkbox
+    <span class="keyword">Then</span> the product count should be updated and be less than the initial count
+
+  <span class="keyword">@filter @negative</span>
+  <span class="keyword">Scenario:</span> Apply incompatible filters yielding no products
+    <span class="keyword">When</span> the user selects the "Footwear" filter checkbox
+    <span class="keyword">And</span> the user selects the "Red" filter checkbox
+    <span class="keyword">Then</span> no products should be displayed in the list</pre>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-sync" style="color:var(--accent-cyan);"></i> Reusable Step Definitions</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.7;">
+              Pre-defined steps such as <code>Given user is logged in</code> are shared globally across test modules using Pytest-BDD fixture injections. This reduces redundant script files and matches Wipro clean design guidelines.
+            </p>
+          </div>
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-tag" style="color:var(--accent-green);"></i> Target Marking (Tags / Hooks)</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.7; margin-bottom:8px;">
+              Scenarios are marked using Gherkin annotations (e.g., <code>@positive</code>, <code>@negative</code>). Allows running filtering suites specifically using:
+            </p>
+            <pre class="code-box terminal" style="padding: 10px 14px;">pytest -m <span class="str">"filter"</span> --alluredir=reports/allure</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#api" class="scroll-indicator">
+      <span>API Resiliency &amp; Robustness</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 7: RESILIENT API CLIENT ══════════════════════ -->
+  <section id="api">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Resilient API Client Layer</div>
+        <h2 class="slide-title">API Robustness &amp; Retry Strategies</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card" style="height:100%;">
+          <h3 style="color:#fff; margin-bottom:10px; font-size:1.05rem;"><i class="fa fa-shield-alt" style="color:var(--accent-green);"></i> urllib3 Connection Retry Strategy</h3>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px; line-height:1.75;">
+            The mock server endpoint (DummyJSON) is hosted behind Cloudflare WAF, causing intermittent drops and 520 server failures. To prevent test suite crashes, we configured a urllib3 Retry adapter directly onto the Session pipeline.
+          </p>
+          <pre class="code-box" style="font-size: 0.72rem;">
+retry_strategy = Retry(
+    total=<span class="func">3</span>,
+    backoff_factor=<span class="func">1</span>, <span class="comment"># Exponential wait 1s, 2s, 4s</span>
+    status_forcelist=[<span class="func">500</span>, <span class="func">502</span>, <span class="func">503</span>, <span class="func">504</span>, <span class="func">520</span>],
+    allowed_methods=[<span class="str">"GET"</span>, <span class="str">"POST"</span>, <span class="str">"PUT"</span>, <span class="str">"DELETE"</span>]
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+self.session.mount(<span class="str">"https://"</span>, adapter)</pre>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-clock" style="color:var(--accent-coral);"></i> 10-Second Hard Timeout Guard</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.7;">
+              Default <code>requests</code> actions block indefinitely if a connection is established but server response delays. Enforcing a global <code>timeout=10</code> constraint prevents CI workflow hangs.
+            </p>
+          </div>
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-file-signature" style="color:var(--accent-cyan);"></i> Schema Validations &amp; Assertions</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.7;">
+              All REST responses undergo strict schema conformity tests, validation checks on HTTP response status codes, and latency checks guaranteeing response times below 1.5 seconds.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#cicd" class="scroll-indicator">
+      <span>GitHub Actions CI/CD</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 8: CI/CD PIPELINE ══════════════════════ -->
+  <section id="cicd">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Continuous Integration &amp; Automation</div>
+        <h2 class="slide-title">GitHub Actions Headless CI Pipeline</h2>
+      </div>
+      <div class="glass-card glow-border" style="margin-bottom:25px;">
+        <h3 style="color:#fff; font-size:1.05rem; margin-bottom:12px;"><i class="fa fa-road" style="color:var(--accent-cyan);"></i> Automation Pipeline Pipeline Sequence (ci.yml)</h3>
+        <div class="ci-steps">
+          <div class="ci-step-box active">
+            <span class="ci-step-icon">🐙</span>
+            <div class="ci-step-name">PR / Push</div>
+            <div class="ci-step-time">Trigger</div>
+          </div>
+          <div class="ci-arrow"><i class="fa fa-chevron-right"></i></div>
+          <div class="ci-step-box">
+            <span class="ci-step-icon">⚙️</span>
+            <div class="ci-step-name">Setup Env</div>
+            <div class="ci-step-time">Python 3.11</div>
+          </div>
+          <div class="ci-arrow"><i class="fa fa-chevron-right"></i></div>
+          <div class="ci-step-box">
+            <span class="ci-step-icon">📦</span>
+            <div class="ci-step-name">Install Deps</div>
+            <div class="ci-step-time">Pip Cached</div>
+          </div>
+          <div class="ci-arrow"><i class="fa fa-chevron-right"></i></div>
+          <div class="ci-step-box">
+            <span class="ci-step-icon">🌐</span>
+            <div class="ci-step-name">WebDrivers</div>
+            <div class="ci-step-time">Manager Auto</div>
+          </div>
+          <div class="ci-arrow"><i class="fa fa-chevron-right"></i></div>
+          <div class="ci-step-box active">
+            <span class="ci-step-icon">🧪</span>
+            <div class="ci-step-name">Pytest Runs</div>
+            <div class="ci-step-time">Headless · 2m42s</div>
+          </div>
+          <div class="ci-arrow"><i class="fa fa-chevron-right"></i></div>
+          <div class="ci-step-box">
+            <span class="ci-step-icon">📊</span>
+            <div class="ci-step-name">Reports Out</div>
+            <div class="ci-step-time">Allure / HTML</div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card">
+          <h3 style="color:#fff; font-size:0.95rem; margin-bottom:8px;"><i class="fab fa-chrome" style="color:var(--accent-green);"></i> Headless Chrome Options</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.7;">
+            Workflow sets <code>HEADLESS=true</code> environment variable. Conftest parses this to inject Chrome flags: <code>--headless=new</code>, <code>--no-sandbox</code>, and <code>--disable-dev-shm-usage</code>.
+          </p>
+        </div>
+        <div class="glass-card">
+          <h3 style="color:#fff; font-size:0.95rem; margin-bottom:8px;"><i class="fa fa-box-open" style="color:var(--accent-coral);"></i> Artifact Persistence</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.7;">
+            The workflow uses <code>actions/upload-artifact@v4</code>. Pytest-HTML and Allure logs are preserved as downloadables regardless of build outcomes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <a href="#reporting" class="scroll-indicator">
+      <span>Allure &amp; HTML Reporting</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 9: REPORTING & SCREENSHOTS ══════════════════════ -->
+  <section id="reporting">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Execution Reports &amp; Screenshot Hooks</div>
+        <h2 class="slide-title">Test Execution, Reporting &amp; Failure Hooks</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card glow-border" style="height:100%;">
+          <span class="p-badge p-badge-coral" style="margin-bottom:10px;">conftest.py failure hook screenshot code</span>
+          <pre class="code-box" style="font-size: 0.72rem; height: 300px; overflow-y: auto;">
+<span class="keyword">@pytest.hookimpl</span>(tryfirst=<span class="keyword">True</span>, hookwrapper=<span class="keyword">True</span>)
+<span class="keyword">def</span> <span class="func">pytest_runtest_makereport</span>(item, call):
+    outcome = <span class="keyword">yield</span>
+    rep = outcome.get_result()
+
+    <span class="keyword">if</span> rep.when == <span class="str">"call"</span> <span class="keyword">and</span> rep.failed:
+        <span class="keyword">if</span> <span class="str">"driver"</span> <span class="keyword">in</span> item.fixturenames:
+            web_driver = item.funcargs.get(<span class="str">"driver"</span>)
+            <span class="keyword">if</span> web_driver:
+                path = f<span class="str">"screenshots/{item.name}.png"</span>
+                web_driver.save_screenshot(path)
+                <span class="keyword">try</span>:
+                    <span class="keyword">import</span> allure
+                    allure.attach.file(
+                        path,
+                        name=<span class="str">"failure-screenshot"</span>,
+                        attachment_type=allure.attachment_type.PNG
+                    )
+                <span class="keyword">except</span> <span class="func">ImportError</span>:
+                    <span class="keyword">pass</span></pre>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-image" style="color:var(--accent-coral);"></i> Automatic Fail Screenshots</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75;">
+              Pytest hook intercepts test failures at run time. Captures browser canvas layout, dumps PNG to <code>screenshots/</code> folder, and attaches it straight to the Allure run logs.
+            </p>
+          </div>
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-chart-bar" style="color:var(--accent-green);"></i> Allure &amp; HTML Execution Reports</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75;">
+              Generates self-contained <code>report.html</code> and detailed Allure Dashboard structures containing timeline plots, pass distributions, execution speed graphs, and category tags.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#defects" class="scroll-indicator">
+      <span>Defect Log &amp; RCA</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 10: DEFECTS LOG ══════════════════════ -->
+  <section id="defects">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Defect Log &amp; RCA Analysis</div>
+        <h2 class="slide-title">Defect Log &amp; Root Cause Analysis (RCA)</h2>
+      </div>
+      <div class="glass-card glow-border">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="font-size:1.05rem; color:#fff;">Capstone Logged Defects</h3>
+          <span class="p-badge p-badge-green">All Core Defects Resolved</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Defect ID</th>
+                <th>Description</th>
+                <th>Severity</th>
+                <th>Component</th>
+                <th>Root Cause &amp; Mitigation Strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>BUG-001</strong></td>
+                <td>API run hangs indefinitely</td>
+                <td><span class="badge-sev sev-critical">CRITICAL</span></td>
+                <td>API Client</td>
+                <td>Missing HTTP timeouts on Requests calls. Resolved by enforcing global <code>timeout=10</code> &amp; urllib3 connection retry backoffs.</td>
+              </tr>
+              <tr>
+                <td><strong>BUG-002</strong></td>
+                <td>Men's Category BDD Step Crash</td>
+                <td><span class="badge-sev sev-major">MAJOR</span></td>
+                <td>BDD Step Defs</td>
+                <td>POM method renamed but step files references were not updated. Fixed by referencing parameterized <code>open_category("Mens Wear")</code>.</td>
+              </tr>
+              <tr>
+                <td><strong>BUG-003</strong></td>
+                <td>Product Add fails on checkout</td>
+                <td><span class="badge-sev sev-major">MAJOR</span></td>
+                <td>UI Page Obj</td>
+                <td>Omitted Product index argument from BDD click wrappers. Resolved by passing default indexing variables (index=1) in step call.</td>
+              </tr>
+              <tr>
+                <td><strong>BUG-004</strong></td>
+                <td>Left-panel checkbox non-clickable</td>
+                <td><span class="badge-sev sev-medium">MEDIUM</span></td>
+                <td>UI Page Obj</td>
+                <td>CSS layouts overlap raw input checkbox fields. Resolved by redirecting XPath click actions straight onto interactive <code>&lt;label&gt;</code> wrappers.</td>
+              </tr>
+              <tr>
+                <td><strong>BUG-005</strong></td>
+                <td>Mock server drops invalid posts</td>
+                <td><span class="badge-sev sev-low">LOW</span></td>
+                <td>External API</td>
+                <td>Mock backend throws unhandled exceptions (HTTP 520) on empty fields. Mitigated by applying Pytest <code>xfail</code> annotations.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <a href="#qa" class="scroll-indicator">
+      <span>Questions &amp; Answers</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 11: TECHNICAL Q&A ══════════════════════ -->
+  <section id="qa">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Interactive Q&amp;A Session</div>
+        <h2 class="slide-title">Technical Questions &amp; Answers</h2>
+      </div>
+      <div class="grid-2">
+        <!-- QA accordion -->
+        <div class="glass-card glow-border" style="height:100%;">
+          <div class="qa-controls">
+            <input type="text" class="search-input" id="qaSearch" placeholder="🔍 Search technical questions (e.g. AJAX, Retry, BDD)..." />
+          </div>
+          <div class="qa-list" id="qaList">
+            <!-- Question 1 -->
+            <div class="qa-item">
+              <div class="qa-question-bar">
+                <span>How does the framework handle dynamic AJAX content?</span>
+                <i class="fa fa-chevron-down chevron"></i>
+              </div>
+              <div class="qa-answer">
+                <div class="qa-answer-inner">
+                  It uses explicit <code>WebDriverWait</code> wrappers in <code>BasePage</code>. Actions like clicking or entering text are wrapped in checks such as <code>EC.element_to_be_clickable</code> or <code>EC.visibility_of_element_located</code>. For cart AJAX increments, a custom lambda monitors the badge count value.
+                </div>
+              </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="qa-item">
+              <div class="qa-question-bar">
+                <span>Why did we choose Pytest-BDD over Robot Framework?</span>
+                <i class="fa fa-chevron-down chevron"></i>
+              </div>
+              <div class="qa-answer">
+                <div class="qa-answer-inner">
+                  Pytest-BDD integrates natively with Pytest's powerful fixture subsystem, allows reusing standard python helper classes, and doesn't require learning custom syntax, while maintaining Gherkin transparency for business groups.
+                </div>
+              </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="qa-item">
+              <div class="qa-question-bar">
+                <span>How does the API client retry logic work?</span>
+                <i class="fa fa-chevron-down chevron"></i>
+              </div>
+              <div class="qa-answer">
+                <div class="qa-answer-inner">
+                  We mount a urllib3 <code>Retry</code> adapter to requests Session instance, configured to retry up to 3 times on transient error states (500, 502, 503, 504, 520) using exponential backoff scaling (wait intervals: 1s, 2s, 4s).
+                </div>
+              </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="qa-item">
+              <div class="qa-question-bar">
+                <span>How are failure screenshots captured during CI runs?</span>
+                <i class="fa fa-chevron-down chevron"></i>
+              </div>
+              <div class="qa-answer">
+                <div class="qa-answer-inner">
+                  A custom Pytest hook in <code>conftest.py</code> monitors run status. On failure, it retrieves driver instance from fixture arguments, snaps a PNG screenshot to the local filesystem, and embeds it directly into the Allure report files.
+                </div>
+              </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="qa-item">
+              <div class="qa-question-bar">
+                <span>What strategy is used for test data management?</span>
+                <i class="fa fa-chevron-down chevron"></i>
+              </div>
+              <div class="qa-answer">
+                <div class="qa-answer-inner">
+                  Test credentials and configurations are centralized in <code>config/config.py</code>. The API layer uses dynamic JSON payloads constructed at runtime via factory methods in <code>api/payloads/</code> to avoid static test data pollution.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form submission -->
+        <div class="glass-card">
+          <h3 style="color:#fff; margin-bottom:10px; font-size:1.05rem;"><i class="fa fa-paper-plane" style="color:var(--accent-cyan);"></i> Ask a Technical Question</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px;">
+            Submit a custom question regarding our Capstone architecture, and our team will get back to you with detailed reviews.
+          </p>
+          <form class="question-form" id="questionForm">
+            <input type="text" placeholder="Your Name" id="qName" required />
+            <input type="email" placeholder="Your Email" id="qEmail" required />
+            <textarea placeholder="Write your technical question here..." id="qText" required></textarea>
+            <button type="submit" class="submit-btn">Send Question</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <a href="#pm" class="scroll-indicator">
+      <span>Timeline &amp; Conclusion</span>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    </a>
+  </section>
+
+
+  <!-- ══════════════════════ SLIDE 12: CONCLUSION ══════════════════════ -->
+  <section id="pm">
+    <div class="slide-content">
+      <div class="slide-header">
+        <div class="section-tag">Milestones &amp; Conclusion</div>
+        <h2 class="slide-title">Project Management, Timelines &amp; Takeaways</h2>
+      </div>
+      <div class="grid-2">
+        <div class="glass-card" style="height:100%;">
+          <h3 style="color:#fff; margin-bottom:12px; font-size:1.05rem;"><i class="fa fa-history" style="color:var(--accent-cyan);"></i> 7-Day Capstone Milestone Timeline</h3>
+          <div class="timeline-steps">
+            <div class="timeline-row">
+              <div class="timeline-dot">D1</div>
+              <div class="timeline-info">
+                <h4>Scope &amp; Setup</h4>
+                <p>AUT Analysis, Test planning, repository setup, and locator definitions.</p>
+              </div>
+            </div>
+            <div class="timeline-row">
+              <div class="timeline-dot">D3</div>
+              <div class="timeline-info">
+                <h4>POM &amp; Base Wrappers</h4>
+                <p>Implementing BasePage methods, explicit waiting, and UI tests structure.</p>
+              </div>
+            </div>
+            <div class="timeline-row">
+              <div class="timeline-dot">D5</div>
+              <div class="timeline-info">
+                <h4>BDD &amp; API Resiliency</h4>
+                <p>Pytest-BDD features execution, requests retry strategy and API tests.</p>
+              </div>
+            </div>
+            <div class="timeline-row">
+              <div class="timeline-dot">D7</div>
+              <div class="timeline-info">
+                <h4>CI &amp; Final Defect Logging</h4>
+                <p>Headless GHA configuration, bug RCA reporting, and PPT compilation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-code-branch" style="color:var(--accent-violet);"></i> Version Control Model</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75;">
+              Git branching model enforced strictly. Individual features developed on dedicated branches (e.g. <code>feature/filter</code>, <code>feature/api-retry</code>) and merged into <code>main</code> only via Pull Request approvals blocked by green CI status checks.
+            </p>
+          </div>
+          <div class="glass-card">
+            <h3 style="color:#fff; margin-bottom:8px; font-size:1.05rem;"><i class="fa fa-award" style="color:var(--accent-green);"></i> Key Takeaways &amp; Learnings</h3>
+            <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.75;">
+              Developing resilient frameworks requires early adoption of explicit waits and API retry adapters. The POM and step definition separation ensures the framework remains maintainable and scalable as other developers join.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast" id="submitToast">
+    <i class="fa fa-check-circle" style="font-size: 1.15rem;"></i>
+    <span>Question submitted successfully! Our team will reply shortly.</span>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // ══════════════════════ ANIMATED STAT COUNTERS ══════════════════════
+    function animateStats() {
+      const counters = document.querySelectorAll('.stat-val');
+      counters.forEach(counter => {
+        if (counter.dataset.intervalId) {
+          clearInterval(parseInt(counter.dataset.intervalId));
+        }
+
+        const target = parseInt(counter.getAttribute('data-target'));
+        const isPercent = counter.textContent.includes('%') || target === 0;
+        let current = 0;
+        const duration = 1200;
+        const stepTime = Math.max(Math.floor(duration / target), 15);
+        
+        if (target === 0) {
+          counter.textContent = "0%";
+          return;
+        }
+
+        const timer = setInterval(() => {
+          current += 1;
+          counter.textContent = current + (isPercent ? '%' : '');
+          if (current >= target) {
+            counter.textContent = target + (isPercent ? '%' : '');
+            clearInterval(timer);
+            delete counter.dataset.intervalId;
+          }
+        }, stepTime);
+
+        counter.dataset.intervalId = timer;
+      });
+    }
+
+    // ══════════════════════ INTERSECTION OBSERVER FOR ACTIVE SLIDES ══════════════════════
+    const sections = document.querySelectorAll('section');
+    const dotItems = document.querySelectorAll('.dot-item');
+    
+    const observerOptions = {
+      root: null,
+      threshold: 0.55 // Slide must be at least 55% visible to active mark
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove active from all sections & dots
+          sections.forEach(sec => sec.classList.remove('active'));
+          dotItems.forEach(dot => dot.classList.remove('active'));
+
+          // Add active to current section
+          entry.target.classList.add('active');
+
+          // Highlight dot
+          const id = entry.target.getAttribute('id');
+          const targetDot = document.querySelector(`.dot-item a[href="#${id}"]`).parentElement;
+          if (targetDot) {
+            targetDot.classList.add('active');
+          }
+
+          // Trigger stats animation if hero is shown
+          if (id === 'hero') {
+            animateStats();
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Smooth scroll for dot links
+    document.querySelectorAll('.dot-link, .scroll-indicator, header a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetSec = document.querySelector(targetId);
+          if (targetSec) {
+            targetSec.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // ══════════════════════ INTERACTIVE Q&A ACCORDION ══════════════════════
+    const qaItems = document.querySelectorAll('.qa-item');
+    
+    qaItems.forEach(item => {
+      const questionBar = item.querySelector('.qa-question-bar');
+      questionBar.addEventListener('click', () => {
+        const wasExpanded = item.classList.contains('expanded');
+        
+        // Collapse all others
+        qaItems.forEach(otherItem => otherItem.classList.remove('expanded'));
+        
+        // Toggle current
+        if (!wasExpanded) {
+          item.classList.add('expanded');
+        }
+      });
+    });
+
+    // Q&A Search Filter
+    const searchInput = document.getElementById('qaSearch');
+    searchInput.addEventListener('input', function() {
+      const filter = this.value.toLowerCase();
+      qaItems.forEach(item => {
+        const text = item.querySelector('.qa-question-bar').textContent.toLowerCase() + 
+                     item.querySelector('.qa-answer-inner').textContent.toLowerCase();
+        if (text.includes(filter)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+
+    // ══════════════════════ MOCK Q&A FORM SUBMISSION ══════════════════════
+    const questionForm = document.getElementById('questionForm');
+    const submitToast = document.getElementById('submitToast');
+
+    questionForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('qName').value;
+      const email = document.getElementById('qEmail').value;
+      const questionText = document.getElementById('qText').value;
+
+      // Mock creation in accordion
+      const newQaItem = document.createElement('div');
+      newQaItem.className = 'qa-item';
+      newQaItem.innerHTML = `
+        <div class="qa-question-bar">
+          <span>[Review Pending] ${questionText.substring(0, 50)}${questionText.length > 50 ? '...' : ''}</span>
+          <i class="fa fa-chevron-down chevron"></i>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            <strong>Asked by ${name}:</strong> ${questionText}<br/><br/>
+            <span style="color:var(--accent-coral);"><i class="fa fa-clock"></i> Thank you! Our QA team will review this query and post an answer shortly.</span>
+          </div>
+        </div>
+      `;
+
+      // Set accordion trigger
+      newQaItem.querySelector('.qa-question-bar').addEventListener('click', () => {
+        const wasExpanded = newQaItem.classList.contains('expanded');
+        qaItems.forEach(otherItem => otherItem.classList.remove('expanded'));
+        if (!wasExpanded) newQaItem.classList.add('expanded');
+      });
+
+      // Insert at top of list
+      const qaList = document.getElementById('qaList');
+      qaList.insertBefore(newQaItem, qaList.firstChild);
+
+      // Toast notification display
+      submitToast.classList.add('show');
+      setTimeout(() => {
+        submitToast.classList.remove('show');
+      }, 4000);
+
+      // Reset form
+      questionForm.reset();
+    });
+
+    // Trigger initial counter load
+    setTimeout(animateStats, 300);
+  </script>
+</body>
+</html>
