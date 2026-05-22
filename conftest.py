@@ -25,7 +25,7 @@ def driver():
     )
     if not is_headless:
         driver.maximize_window()
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(20)
     yield driver
     driver.quit()
 

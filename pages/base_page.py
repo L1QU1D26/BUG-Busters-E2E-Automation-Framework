@@ -8,7 +8,7 @@ class BasePage:
 
         self.driver = driver
 
-        self.wait = WebDriverWait(driver, 10)
+        self.wait = WebDriverWait(driver, 20)
 
     def open_url(self):
 
