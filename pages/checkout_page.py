@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 from locators.checkout_locators import CheckoutLocators
 
 # Generous timeout for page navigation on slow CI runners
-NAV_TIMEOUT = 45
+NAV_TIMEOUT = 60
 
 
 class CheckoutValidationPage(BasePage):
