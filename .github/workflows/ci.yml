@@ -31,9 +31,23 @@ jobs:
           sudo apt-get install -y wget curl unzip
           # Chrome is pre-installed on ubuntu-latest runner, but we ensure ChromeDriver setup is clean.
 
+      - name: Wait for Test Site to be Reachable
+        run: |
+          echo "Checking if https://shop.qaautomationlabs.com/ is reachable..."
+          for i in 1 2 3 4 5; do
+            if curl -s --max-time 15 -o /dev/null -w "%{http_code}" https://shop.qaautomationlabs.com/ | grep -qE '^[23]'; then
+              echo "Site is up! Proceeding with tests."
+              exit 0
+            fi
+            echo "Attempt $i failed. Retrying in 15 seconds..."
+            sleep 15
+          done
+          echo "WARNING: Site may be slow. Proceeding anyway with extended timeouts."
+
       - name: Run Tests (Headless)
         env:
           HEADLESS: "true"
+          CI_WAIT_TIMEOUT: "30"
         run: |
           pytest -v
 

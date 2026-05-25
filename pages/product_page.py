@@ -67,6 +67,14 @@ class ProductPage(BasePage):
 
     def get_product_count(self):
 
+        try:
+            # Wait for at least one product card to appear before counting
+            self.wait.until(
+                lambda d: len(d.find_elements(*ProductLocators.PRODUCT_CARDS)) > 0
+            )
+        except Exception:
+            pass  # If no products appear (e.g. incompatible filters), count will be 0
+
         products = self.driver.find_elements(
             *ProductLocators.PRODUCT_CARDS
         )
