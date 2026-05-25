@@ -1,5 +1,6 @@
 
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
 
 from pages.base_page import BasePage
 from locators.cart_locators import CartLocators
@@ -71,14 +72,14 @@ class CartPage(BasePage):
 
     def update_product_quantity(self, quantity):
 
-        quantity_element = self.driver.find_element(
-            *CartLocators.QUANTITY_INPUT
+        quantity_element = self.wait.until(
+            EC.visibility_of_element_located(CartLocators.QUANTITY_INPUT)
         )
 
         quantity_element.clear()
 
-        quantity_element = self.driver.find_element(
-            *CartLocators.QUANTITY_INPUT
+        quantity_element = self.wait.until(
+            EC.visibility_of_element_located(CartLocators.QUANTITY_INPUT)
         )
 
         quantity_element.send_keys(
