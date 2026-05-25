@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import os
 
 
 class BasePage:
@@ -8,7 +9,8 @@ class BasePage:
 
         self.driver = driver
 
-        self.wait = WebDriverWait(driver, 20)
+        _timeout = int(os.getenv("CI_WAIT_TIMEOUT", "20"))
+        self.wait = WebDriverWait(driver, _timeout)
 
     def open_url(self):
 
